@@ -86,7 +86,7 @@ jpro {
   // for debugging
   // JVMArgs << '-agentlib:jdwp=transport=dt_socket,server=n,address=5006,suspend=y'
 
-  JVMArgs << '-Xmx1000m'
+  JVMArgs << '-Xmx300m'
 
   //jpro server port
   port = 80
