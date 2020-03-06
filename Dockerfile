@@ -12,5 +12,5 @@ RUN ls build/distributions/
 # CMD ls build/distributions/
 RUN cp start2.sh ./app-jpro/bin/start.sh
 RUN chmod +x ./app-jpro/bin/start.sh
-RUN [“sh”, “-c”, “echo  -Dhttp.port=$PORT”]
-CMD [“sh”, “-c”, “./app-jpro/bin/start.sh  -Dhttp.port=$PORT”]
+RUN ["sh", "-c", "echo  -Dhttp.port=$PORT"]
+CMD ["sh", "-c", "./app-jpro/bin/start.sh  -Dhttp.port=$PORT"]
