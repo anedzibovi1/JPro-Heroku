@@ -89,7 +89,7 @@ jpro {
   JVMArgs << '-Xmx1000m'
 
   //jpro server port
-  port = 8080
+  port = 80
 
 }
 
