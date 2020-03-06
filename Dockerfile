@@ -5,6 +5,7 @@ RUN apt-get -y install unzip
 WORKDIR /app
 COPY . /app/
 RUN ./gradlew jproRelease
+RUN ls unzip build/distributions/
 RUN unzip build/distributions/JPro-Heroku-jpro
 CMD ls build/distributions/
 # CMD ./build/distributions/JPro-Heroku-jpro/bin/start.sh
