@@ -5,7 +5,7 @@ RUN apt-get -y install unzip
 WORKDIR /app
 COPY . /app/
 RUN ./gradlew jproRelease
-RUN ls unzip build/distributions/
+RUN ls build/distributions/
 RUN unzip build/distributions/app-jpro
 CMD ls build/distributions/
 # CMD ./build/distributions/app-jpro/bin/start.sh
