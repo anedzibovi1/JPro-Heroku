@@ -92,3 +92,7 @@ jpro {
   port = 8080
 
 }
+
+
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
