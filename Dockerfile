@@ -10,4 +10,6 @@ RUN unzip build/distributions/app-jpro
 RUN ls .
 RUN ls build/distributions/
 # CMD ls build/distributions/
+RUN cp start2.sh ./app-jpro/bin/start.sh
+RUN chmod +x ./app-jpro/bin/start.sh
 CMD ./app-jpro/bin/start.sh
