@@ -7,5 +7,7 @@ COPY . /app/
 RUN ./gradlew jproRelease
 RUN ls build/distributions/
 RUN unzip build/distributions/app-jpro
-CMD ls build/distributions/
-# CMD ./build/distributions/app-jpro/bin/start.sh
+RUN ls .
+RUN ls build/distributions/
+# CMD ls build/distributions/
+CMD ./app-jpro/bin/start.sh
