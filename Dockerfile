@@ -5,4 +5,4 @@ RUN echo 1
 RUN ls
 WORKDIR /app
 COPY . /app/
-CMD ls
+CMD ./gradlew jproRun
