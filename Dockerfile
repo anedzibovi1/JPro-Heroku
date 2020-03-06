@@ -6,6 +6,6 @@ WORKDIR /app
 COPY . /app/
 RUN ./gradlew jproRelease
 RUN ls unzip build/distributions/
-RUN unzip build/distributions/JPro-Heroku-jpro
+RUN unzip build/distributions/app-jpro
 CMD ls build/distributions/
-# CMD ./build/distributions/JPro-Heroku-jpro/bin/start.sh
+# CMD ./build/distributions/app-jpro/bin/start.sh
