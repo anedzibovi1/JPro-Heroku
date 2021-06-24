@@ -57,7 +57,7 @@ public class StudyntDAO {
 
     public StudyntDAO() {
         try {
-            con = DriverManager.getConnection("jdbc:sqlite:" + System.getProperty("user.home") + "/IdeaProjects/HelloJPro/studynt.db");
+            con = DriverManager.getConnection("jdbc:sqlite:" + System.getProperty("user.home") + "/studynt.db");
             //con = DriverManager.getConnection("jdbc:sqlite:studynt.db");
         } catch (SQLException e) {
             e.printStackTrace();

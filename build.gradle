@@ -6,17 +6,19 @@ buildscript {
     repositories {
         jcenter()
         gradlePluginPortal()
+        mavenCentral()
 
         maven {
-            url "https://sandec.jfrog.io/artifactory/repo"
+            url "https://sandec.bintray.com/repo"
         }
     }
 
     dependencies {
-        classpath 'com.sandec.jpro:jpro-plugin-gradle:2021.1.1'
+        classpath 'com.sandec.jpro:jpro-plugin-gradle:2020.1.4'
         classpath 'org.openjfx:javafx-plugin:0.0.9'
     }
 }
+
 
 plugins {
     id 'application'
