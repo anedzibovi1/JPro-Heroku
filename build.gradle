@@ -3,19 +3,19 @@
  ******************  Script Configuration ******************
  */
 buildscript {
-  repositories {
-    jcenter()
+    repositories {
+        jcenter()
+        gradlePluginPortal()
 
-    maven {
-      url "https://sandec.bintray.com/repo"
+        maven {
+            url "https://sandec.jfrog.io/artifactory/repo"
+        }
     }
-  }
 
-  dependencies {
-    classpath 'com.sandec.jpro:jpro-plugin-gradle:2019.2.1'
-  }
+    dependencies {
+        classpath 'com.sandec.jpro:jpro-plugin-gradle:2021.1.1'
+    }
 }
-
 
 /**
  ******************  Java Configuration ******************
