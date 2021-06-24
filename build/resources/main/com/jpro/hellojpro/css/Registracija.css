@@ -1,0 +1,44 @@
+.title {
+    -fx-font-family: 'AppleGothic', Tahoma, Geneva, sans-serif	;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+ }
+
+.registration-title {
+    -fx-font-family: 'AppleGothic', Tahoma, Geneva, sans-serif	;
+    -fx-font-size: 14px;
+}
+
+.registration-descr {
+    -fx-font-family: 'AppleGothic', Tahoma, Geneva, sans-serif	;
+    -fx-font-size: 10px;
+}
+
+.submit-btn {
+    -fx-background-color: #244F94;
+    -fx-border-radius: 5;
+    -fx-border-color: #244F94;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-family: 'AppleGothic', Tahoma, Geneva, sans-serif	;
+}
+
+.text-field {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+    -fx-font-size: 11px;
+    -fx-font-family: 'AppleGothic', Tahoma, Geneva, sans-serif	;
+}
+
+.text-field:focused {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0, 0 -1 3 -1;
+}
+
+.poljeNijeIspravno {
+   -fx-background-color: lightpink;
+}
+
+.text {
+    -fx-font-family: 'AppleGothic', Tahoma, Geneva, sans-serif	;
+}

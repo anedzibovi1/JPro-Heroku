@@ -2,10 +2,14 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -18,23 +22,35 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane fx:id="spProfilStudenta" minWidth="800.0" style="-fx-background-color: white;" stylesheets="@../css/ProfilStudenta.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="spZadaci" minWidth="800.0" stylesheets="@../css/GlavnaStranica.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
          <center>
-            <GridPane BorderPane.alignment="CENTER">
+            <GridPane style="-fx-background-color: white;" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" percentHeight="70.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+                <RowConstraints minHeight="10.0" percentHeight="75.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <StackPane fx:id="spProfil" styleClass="stack-pane-border" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnSpan="3">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-text" text="Zadaci" StackPane.alignment="CENTER_LEFT">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets left="10.0" />
+                           </StackPane.margin>
+                        </Text>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="spZadatak" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #f0f5ff;" styleClass="stack-pane-border" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
                      <children>
                         <GridPane>
                           <columnConstraints>
@@ -45,98 +61,83 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Slika profila">
+                              <JFXButton fx:id="btnDodajZadatak" onAction="#dodajZadatakAction" style="-fx-background-color: #244f94;" styleClass="tekst" text="Dodaj novi zadatak" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
                                  <GridPane.margin>
-                                    <Insets left="10.0" />
-                                 </GridPane.margin>
-                              </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Ime" GridPane.rowIndex="1">
-                                 <GridPane.margin>
-                                    <Insets left="10.0" />
-                                 </GridPane.margin>
-                              </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Prezime" GridPane.rowIndex="2">
-                                 <GridPane.margin>
-                                    <Insets left="10.0" />
-                                 </GridPane.margin>
-                              </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Email" GridPane.rowIndex="3">
-                                 <GridPane.margin>
-                                    <Insets left="10.0" />
-                                 </GridPane.margin>
-                              </Text>
-                              <JFXButton fx:id="btnObrisiProfil" onAction="#obrisiProfilAction" text="Obriši profil" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
-                                 <GridPane.margin>
-                                    <Insets left="10.0" />
+                                    <Insets right="5.0" />
                                  </GridPane.margin>
                               </JFXButton>
-                              <JFXButton fx:id="btnSpasi" onAction="#izmijeniStudentaAction" text="Spasi promjene" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                              <ChoiceBox fx:id="cbPredmet" style="-fx-background-color: white;" styleClass="tekst">
                                  <GridPane.margin>
-                                    <Insets left="10.0" />
+                                    <Insets left="5.0" />
+                                 </GridPane.margin>
+                              </ChoiceBox>
+                              <JFXTextField fx:id="tfNaziv" styleClass="tekst" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" right="10.0" />
+                                 </GridPane.margin>
+                              </JFXTextField>
+                              <JFXTextArea fx:id="taOpis" styleClass="tekst" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" right="5.0" top="30.0" />
+                                 </GridPane.margin>
+                              </JFXTextArea>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tekst" text="Predmet" GridPane.valignment="TOP">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" top="25.0" />
+                                 </GridPane.margin>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tekst" text="Naziv" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" top="25.0" />
+                                 </GridPane.margin>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tekst" text="Datum završetka" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" top="25.0" />
+                                 </GridPane.margin>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tekst" text="Opis" GridPane.rowIndex="2" GridPane.valignment="TOP">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" top="10.0" />
+                                 </GridPane.margin>
+                              </Text>
+                              <DatePicker fx:id="dpDatumZ" maxWidth="1.7976931348623157E308" styleClass="tekst" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </GridPane.margin>
+                              </DatePicker>
+                              <JFXButton fx:id="btnIzmijeniZadatak" onAction="#izmijeniZadatakAction" style="-fx-background-color: #244f94;" styleClass="tekst" text="Izmijeni zadatak" textFill="WHITE" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets right="5.0" />
                                  </GridPane.margin>
                               </JFXButton>
-                              <ImageView fx:id="ivSlikaProfila" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
-                                 <GridPane.margin>
-                                    <Insets left="10.0" />
-                                 </GridPane.margin>
-                                 <image>
-                                    <Image url="@../img/001-boy.png" />
-                                 </image>
-                              </ImageView>
-                              <JFXTextField fx:id="tfIme" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                 <GridPane.margin>
-                                    <Insets left="10.0" right="10.0" />
-                                 </GridPane.margin>
-                              </JFXTextField>
-                              <JFXTextField fx:id="tfPrezime" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                                 <GridPane.margin>
-                                    <Insets left="10.0" right="10.0" />
-                                 </GridPane.margin>
-                              </JFXTextField>
-                              <JFXTextField fx:id="tfEmail" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                                 <GridPane.margin>
-                                    <Insets left="10.0" right="10.0" />
-                                 </GridPane.margin>
-                              </JFXTextField>
-                              <JFXComboBox fx:id="cbNovaIkona" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
-                                 <GridPane.margin>
-                                    <Insets left="10.0" right="10.0" />
-                                 </GridPane.margin>
-                              </JFXComboBox>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Nova Ikona" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
-                                 <GridPane.margin>
-                                    <Insets left="10.0" />
-                                 </GridPane.margin></Text>
                            </children>
                         </GridPane>
                      </children>
                   </StackPane>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="header-text" text="Postavke Profila">
+                  <JFXListView fx:id="lvZadaci" styleClass="text" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+                  <JFXButton fx:id="btnObrisiUnose" onAction="#obrisiUnoseAction" style="-fx-background-color: #244f94;" styleClass="tekst" text="Novi zadatak" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </JFXButton>
+                  <JFXComboBox fx:id="cbFilter" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets left="10.0" />
                      </GridPane.margin>
-                  </Text>
-                  <JFXButton fx:id="btnOdjaviSe" onAction="#odjaviSeAction" text="Odjavi se" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
-                     <GridPane.margin>
-                        <Insets bottom="10.0" right="10.0" />
-                     </GridPane.margin>
-                     <padding>
-                        <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
-                     </padding>
-                  </JFXButton>
-                  <Text fx:id="tPolja" fill="#f24c4c" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Polja ne smiju ostati prazna!" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
-                     <font>
-                        <Font name="Verdana" size="13.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets top="10.0" />
-                     </GridPane.margin>
-                  </Text>
+                  </JFXComboBox>
                </children>
             </GridPane>
          </center>
