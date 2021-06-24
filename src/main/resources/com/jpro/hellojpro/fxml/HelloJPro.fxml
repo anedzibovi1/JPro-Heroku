@@ -1,18 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
-<StackPane
-        xmlns:fx="http://javafx.com/fxml"
-        stylesheets="@../css/HelloJPro.css"
-        prefWidth="800" prefHeight="600"
-        fx:id="root"
-        fx:controller="com.jpro.hellojpro.HelloJProFXMLController">
-    <Label text="Hello" styleClass="hello-label"></Label>
-    <ImageView fx:id="logo" fitWidth="300" preserveRatio="true">
-        <Image url="@../img/JPRO_logo_rgb.png"></Image>
-    </ImageView>
-    <Label fx:id="platformLabel" text="Platform: " styleClass="platform-label" StackPane.alignment="BOTTOM_CENTER"></Label>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="rootPane" minHeight="900.0" minWidth="800.0" style="-fx-background-color: #FFF;" stylesheets="@../css/HelloJPro.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.5" style="-fx-background-color: #244F94 #244F94;">
+        <items>
+            <GridPane maxWidth="1.7976931348623157E308">
+              <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" percentWidth="20.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" percentWidth="60.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" percentWidth="20.0" prefWidth="150.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                   <ImageView fitHeight="250.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                       <Image url="@../img/students-ikona.png" />
+                   </ImageView>
+                  <Label fx:id="platformLabel" styleClass="platform-label" text="Platform: " GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin></Label>
+                  <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="DOBRODOŠLI NA STUDYNT!" wrappingWidth="537.7305603027344" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets bottom="30.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="Verdana Bold" size="34.0" />
+                     </font>
+                  </Text>
+               </children>
+            </GridPane>
+            <StackPane minWidth="300.0" style="-fx-background-color: #fff;">
+               <children>
+                  <GridPane maxWidth="1.7976931348623157E308" minWidth="200.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" maxWidth="520.975830078125" minWidth="10.0" percentWidth="33.33" prefWidth="332.931396484375" />
+                      <ColumnConstraints hgrow="ALWAYS" maxWidth="579.8627319335938" minWidth="10.0" prefWidth="330.068603515625" />
+                      <ColumnConstraints hgrow="ALWAYS" maxWidth="349.1378173828125" minWidth="10.0" percentWidth="33.33" prefWidth="349.1378173828125" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="btnRegistracija" mnemonicParsing="false" onAction="#otvoriRegistraciju" prefHeight="60.0" prefWidth="437.0" style="-fx-background-color: #ADC5EB;" styleClass="registracija" text="Nemate nalog? Registrujte se ovdje" textFill="#244f94" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BASELINE">
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                           <GridPane.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </GridPane.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Text fill="#244f94" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Prijava" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+                           <GridPane.margin>
+                              <Insets left="40.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Text>
+                        <JFXPasswordField fx:id="pfPassword" promptText="Password" styleClass="text" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="40.0" right="40.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font>
+                        </JFXPasswordField>
+                        <JFXTextField fx:id="tfEmail" promptText="Email" styleClass="text" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="40.0" right="40.0" />
+                           </GridPane.margin>
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton minHeight="45.0" minWidth="200.0" onAction="#otvoriGlavnuStranicu" style="-fx-background-color: #244f94;" text="Prijavite se" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                           </GridPane.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Text fx:id="tEmailLozinka" fill="#fc5855" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Neispravan email ili lozinka!" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                           <font>
+                              <Font name="Verdana" size="15.0" />
+                           </font>
+                        </Text>
+                        <JFXButton fx:id="btnLozinka" style="-fx-background-color: white;" text="Zaboravili ste lozinku?" textFill="#244f94" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets top="20.0" />
+                           </GridPane.margin>
+                        </JFXButton>
+                     </children>
+                  </GridPane>
+               </children>
+            </StackPane>
+        </items>
+      </SplitPane>
+   </children>
 </StackPane>

@@ -1,5 +1,6 @@
 package com.jpro.hellojpro;
 
+import com.jpro.hellojpro.controller.StudyntFXMLController;
 import com.jpro.webapi.JProApplication;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,12 +20,14 @@ public class HelloJProFXML extends JProApplication
     public void start(Stage stage)
     {
         //load user interface as FXML file
+        StudyntFXMLController studyntFXMLController = new StudyntFXMLController();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/jpro/hellojpro/fxml/HelloJPro.fxml"));
+        loader.setController(studyntFXMLController);
         Scene scene = null;
         try
         {
             Parent root = loader.load();
-            HelloJProFXMLController controller = loader.getController();
+            StudyntFXMLController controller = loader.getController();
             controller.init(this);
 
             //create JavaFX scene

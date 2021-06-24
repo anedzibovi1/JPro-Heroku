@@ -14,7 +14,13 @@ buildscript {
 
     dependencies {
         classpath 'com.sandec.jpro:jpro-plugin-gradle:2021.1.1'
+        classpath 'org.openjfx:javafx-plugin:0.0.9'
     }
+}
+
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
 /**
@@ -23,6 +29,8 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'com.google.osdetector'
+apply plugin: 'org.openjfx.javafxplugin'
+
 
 compileJava {
   sourceCompatibility = 11
@@ -36,34 +44,23 @@ repositories {
 ext.platform = osdetector.os == 'osx' ? 'mac' : osdetector.os == 'windows' ? 'win' : osdetector.os
 
 dependencies {
-    // Add your dependencies here, for example:
-    // compile group: 'org.controlsfx', name: 'controlsfx', version: '8.40.14'
-    compile "org.openjfx:javafx-base:11:$platform"
-    compile "org.openjfx:javafx-graphics:11:$platform"
-    compile "org.openjfx:javafx-controls:11:$platform"
-    compile "org.openjfx:javafx-fxml:11:$platform"
-    compile "org.openjfx:javafx-media:11:$platform"
-    compile "org.openjfx:javafx-web:11:$platform"
+    compile group: 'com.jfoenix', name: 'jfoenix', version: '9.0.1'
+    implementation 'com.calendarfx:view:11.9.0'
+    implementation 'org.xerial:sqlite-jdbc:3.34.0'
+    implementation 'javax.mail:javax.mail-api:1.6.2'
+}
+
+repositories {
+    jcenter()
+    maven {
+        url  "https://dl.bintray.com/dlsc-oss/repository/CalendarFX/11.9.0"
+    }
 }
 
 
-compileJava {
-  doFirst {
-    options.compilerArgs = [
-            '--module-path', classpath.asPath,
-            '--add-modules', 'javafx.fxml,javafx.controls'
-    ]
-  }
-}
-
-
-run {
-  doFirst {
-    jvmArgs = [
-            '--module-path', classpath.asPath,
-            '--add-modules', 'javafx.fxml,javafx.controls'
-    ]
-  }
+javafx {
+    version = '11.0.2'
+    modules = [ 'javafx.base', 'javafx.graphics', 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.web', 'javafx.controls' ]
 }
 
 
