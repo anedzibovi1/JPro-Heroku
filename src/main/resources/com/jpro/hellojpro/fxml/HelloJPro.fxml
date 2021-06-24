@@ -115,14 +115,6 @@
                               <Font name="Verdana" size="15.0" />
                            </font>
                         </Text>
-                        <JFXButton fx:id="btnLozinka" style="-fx-background-color: white;" text="Zaboravili ste lozinku?" textFill="#244f94" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                           <font>
-                              <Font name="Verdana" size="12.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets top="20.0" />
-                           </GridPane.margin>
-                        </JFXButton>
                      </children>
                   </GridPane>
                </children>
