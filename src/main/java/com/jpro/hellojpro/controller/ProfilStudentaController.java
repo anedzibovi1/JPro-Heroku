@@ -1,8 +1,6 @@
 package com.jpro.hellojpro.controller;
 
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
 import com.jpro.hellojpro.StudyntDAO;
 import com.jpro.hellojpro.listCells.ImageListCell;
 import com.jpro.hellojpro.model.Student;
@@ -12,11 +10,15 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
@@ -50,7 +52,7 @@ public class ProfilStudentaController implements Initializable {
     protected JFXButton btnPostavke;
 
     @FXML
-    protected GridPane gpProfil;
+    protected GridPane gpKorisnik;
 
     @FXML
     protected ImageView ivSlikaProfila;
@@ -254,12 +256,48 @@ public class ProfilStudentaController implements Initializable {
     }
 
     public void obrisiProfilAction(ActionEvent actionEvent) throws IOException {
-        studyntDAO.obrisiStudenta(student);
-        StudyntFXMLController studyntFXMLController = new StudyntFXMLController();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/jpro/hellojpro/fxml/HelloJPro.fxml"));
-        loader.setController(studyntFXMLController);
-        StackPane stackPane = loader.load();
-        spProfilStudenta.getChildren().setAll(stackPane);
+        JFXDialogLayout dialogLayout = new JFXDialogLayout();
+        dialogLayout.setHeading(new Text("Brisanje profila"));
+        dialogLayout.setBody(new Text("Da li ste sigurni da želite obrisati profil?"));
+        JFXButton da = new JFXButton("Da");
+        JFXButton ne = new JFXButton("Ne");
+
+        da.setId("btnDa");
+        ne.setId("btnNe");
+
+        da.setStyle("-fx-background-color: lightgreen");
+        ne.setStyle("-fx-background-color: lightpink");
+
+        dialogLayout.setActions(da,ne);
+
+        JFXDialog dialog = new JFXDialog(spProfilStudenta, dialogLayout, JFXDialog.DialogTransition.BOTTOM);
+        dialog.setId("jfxDialog");
+        da.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                dialog.close();
+                studyntDAO.obrisiStudenta(student);
+                StudyntFXMLController studyntFXMLController = new StudyntFXMLController();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/jpro/hellojpro/fxml/HelloJPro.fxml"));
+                loader.setController(studyntFXMLController);
+                StackPane stackPane = null;
+                try {
+                    stackPane = loader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                spProfilStudenta.getChildren().setAll(stackPane);
+            }
+        });
+
+        ne.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                dialog.close();
+            }
+        });
+
+        dialog.show();
     }
 
     public void odjaviSeAction(ActionEvent actionEvent) throws IOException {

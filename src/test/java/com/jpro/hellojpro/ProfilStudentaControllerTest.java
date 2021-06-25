@@ -1,8 +1,6 @@
 package com.jpro.hellojpro;
 
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXListView;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
 import com.jpro.hellojpro.StudyntDAO;
 import com.jpro.hellojpro.controller.PretragaFXMLController;
 import com.jpro.hellojpro.controller.ProfilStudentaController;
@@ -113,8 +111,28 @@ class ProfilStudentaControllerTest {
 
     @Test
     @Order(9)
-    void brise_li_se_profil(FxRobot robot) {
+    void otvara_li_se_dialog(FxRobot robot) {
         robot.clickOn("#btnObrisiProfil");
+        Assertions.assertThat(robot.lookup("#jfxDialog").queryAs(JFXDialog.class)).isVisible();
+    }
+
+    @Test
+    @Order(10)
+    void zatvara_li_se_dialog(FxRobot robot) throws InterruptedException {
+        robot.clickOn("#btnObrisiProfil");
+        Thread.sleep(2000);
+        robot.clickOn("#btnNe");
+        Thread.sleep(2000);
+        Assertions.assertThat(robot.lookup("#spProfilStudenta").queryAs(StackPane.class)).isVisible();
+    }
+
+    @Test
+    @Order(11)
+    void brise_li_se_profil(FxRobot robot) throws InterruptedException {
+        robot.clickOn("#btnObrisiProfil");
+        Thread.sleep(2000);
+        robot.clickOn("#btnDa");
+        Thread.sleep(2000);
         Assertions.assertThat(robot.lookup("#rootPane").queryAs(StackPane.class)).isVisible();
     }
 
