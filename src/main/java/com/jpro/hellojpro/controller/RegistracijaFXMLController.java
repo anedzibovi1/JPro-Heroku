@@ -82,7 +82,7 @@ public class RegistracijaFXMLController implements Initializable {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(tfEmail.getText());
 
-        if(pfPassword.getText().equals(pfPassword2.getText()) && !pfPassword2.getText().isEmpty() && matcher.matches()) {
+        if(pfPassword.getText().equals(pfPassword2.getText()) && !pfPassword2.getText().isEmpty() && matcher.matches() && studyntDAO.nadjiStudentaZaEmail(tfEmail.getText()) == null) {
             student = new Student(tfIme.getText(), tfPrezime.getText(), tfEmail.getText(), pfPassword.getText());
             studyntDAO.dodajStudenta(student);
             GlavnaStranicaFXMLController glavnaStranicaFXMLController = new GlavnaStranicaFXMLController(student, studyntDAO);
@@ -90,6 +90,23 @@ public class RegistracijaFXMLController implements Initializable {
             loader.setController(glavnaStranicaFXMLController);
             StackPane stackPane = loader.load();
             spReg.getChildren().setAll(stackPane);
+        }
+
+        else if(studyntDAO.nadjiStudentaZaEmail(tfEmail.getText()) != null) {
+            tfEmail.getStyleClass().add("poljeNijeIspravno");
+
+            tEmail.setVisible(true);
+            tEmail.setText("Korisnik sa ovim emailom već postoji!");
+            FadeTransition ft = new FadeTransition(Duration.millis(300), tEmail);
+            ft.setFromValue(0.0);
+            ft.setToValue(1.0);
+            ft.play();
+
+            tfEmail.textProperty().addListener((obs, oldIme, newIme) -> {
+                if (!newIme.isEmpty()) {
+                    tfEmail.getStyleClass().removeAll("poljeNijeIspravno");
+                }
+            });
         }
 
         else if(tfIme.getText().isEmpty() || tfPrezime.getText().isEmpty() || pfPassword.getText().isEmpty() || tfEmail.getText().isEmpty()) {

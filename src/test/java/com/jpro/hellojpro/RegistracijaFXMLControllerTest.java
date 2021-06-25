@@ -117,6 +117,25 @@ class RegistracijaFXMLControllerTest {
     }
 
     @Test
+    void prijavljuje_li_gresku_za_email_2(FxRobot robot) {
+        Text el = robot.lookup("#tEmail").queryAs(Text.class);
+
+        robot.clickOn("#tfIme");
+        robot.write("Novo");
+        robot.clickOn("#tfPrezime");
+        robot.write("Novic");
+        robot.clickOn("#tfEmail");
+        robot.write("anedzibovi1@etf.unsa.ba");
+        robot.clickOn("#pfPassword");
+        robot.write("nnekic1");
+        robot.clickOn("#pfPassword2");
+        robot.write("nnekic1");
+
+        robot.clickOn("#btnPrihvati");
+        Assertions.assertThat(el).isVisible();
+    }
+
+    @Test
     void prijavljuje_li_gresku_za_lozinku(FxRobot robot) {
         Text el = robot.lookup("#tPassword").queryAs(Text.class);
 

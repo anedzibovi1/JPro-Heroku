@@ -825,8 +825,9 @@ public class StudyntDAO {
             Student s = dajStudenta(student.getId());
             if(s == null) return;
             do {
+                if(predmeti(s.getId()).size() > 0)
                 obrisiPredmet(predmeti(s.getId()).get(predmeti(s.getId()).size() - 1));
-            } while (predmeti(student.getId()).size() != 0);
+            } while (predmeti(student.getId()).size() != 0 && predmeti(s.getId()).size() > 0);
 
             obrisiStudentaUpit.setInt(1,student.getId());
             obrisiStudentaUpit.executeUpdate();
