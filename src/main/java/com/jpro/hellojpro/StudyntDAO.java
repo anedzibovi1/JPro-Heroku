@@ -133,7 +133,7 @@ public class StudyntDAO {
         Scanner scanner = null;
 
         try {
-            scanner = new Scanner(new FileInputStream("/IdeaProjects/HelloJPro/studynt.sql"));
+            scanner = new Scanner(new FileInputStream("studynt.sql"));
             StringBuilder sqlUpit = new StringBuilder("");
             while (scanner.hasNext()) {
 

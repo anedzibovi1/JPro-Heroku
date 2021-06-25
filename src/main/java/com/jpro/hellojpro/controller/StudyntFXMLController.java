@@ -50,8 +50,8 @@ public class StudyntFXMLController implements Initializable
     {
         model = StudyntDAO.getInstance();
         tEmailLozinka.setVisible(false);
-        tfEmail.setText(model.getStudenti().get(1).getEmail());
-        pfPassword.setText(model.getStudenti().get(1).getPassword());
+        //tfEmail.setText(model.getStudenti().get(1).getEmail());
+        //pfPassword.setText(model.getStudenti().get(1).getPassword());
         platformLabel.setText(String.format("Platform: %s", WebAPI.isBrowser() ? "Browser" : "Desktop"));
     }
 

@@ -52,6 +52,9 @@ public class updateDeleteCellZadatak extends JFXListCell<Zadatak> {
         button.setCursor(Cursor.HAND);
         button1.setCursor(Cursor.HAND);
 
+        button.setId("btnObrisi");
+        button1.setId("btnIzmijeni");
+
         hbox.getChildren().addAll(vbox, pane, button1, button);
         hbox.setSpacing(5);
         vbox.getChildren().addAll(label,label1);

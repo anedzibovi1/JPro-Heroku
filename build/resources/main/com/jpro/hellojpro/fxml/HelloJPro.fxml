@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane fx:id="rootPane" minHeight="900.0" minWidth="800.0" style="-fx-background-color: #FFF;" stylesheets="@../css/HelloJPro.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="rootPane" minHeight="610.0" minWidth="800.0" style="-fx-background-color: #FFF;" stylesheets="@../css/HelloJPro.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <SplitPane dividerPositions="0.5" style="-fx-background-color: #244F94 #244F94;">
         <items>
@@ -102,7 +102,7 @@
                               <Font name="Verdana" size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXButton minHeight="45.0" minWidth="200.0" onAction="#otvoriGlavnuStranicu" style="-fx-background-color: #244f94;" text="Prijavite se" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                        <JFXButton fx:id="btnGlavna" minHeight="45.0" minWidth="200.0" onAction="#otvoriGlavnuStranicu" style="-fx-background-color: #244f94;" text="Prijavite se" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
                            <GridPane.margin>
                               <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                            </GridPane.margin>
@@ -115,14 +115,6 @@
                               <Font name="Verdana" size="15.0" />
                            </font>
                         </Text>
-                        <JFXButton fx:id="btnLozinka" style="-fx-background-color: white;" text="Zaboravili ste lozinku?" textFill="#244f94" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
-                           <font>
-                              <Font name="Verdana" size="12.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets top="20.0" />
-                           </GridPane.margin>
-                        </JFXButton>
                      </children>
                   </GridPane>
                </children>

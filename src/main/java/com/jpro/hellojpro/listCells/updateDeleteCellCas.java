@@ -57,6 +57,10 @@ public class updateDeleteCellCas extends JFXListCell<Cas> {
         button.setCursor(Cursor.HAND);
         button1.setCursor(Cursor.HAND);
 
+        button.setId("btnObrisi");
+        button1.setId("btnIzmijeni");
+
+
         HBox.setHgrow(pane, Priority.ALWAYS);
 
         button.setOnAction(event -> {

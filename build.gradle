@@ -49,6 +49,9 @@ dependencies {
     implementation 'com.calendarfx:view:11.9.0'
     implementation 'org.xerial:sqlite-jdbc:3.34.0'
     implementation 'javax.mail:javax.mail-api:1.6.2'
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.5.1'
+    testCompile "org.testfx:testfx-junit5:4.0.16-alpha"
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.13.2'
 }
 
 repositories {

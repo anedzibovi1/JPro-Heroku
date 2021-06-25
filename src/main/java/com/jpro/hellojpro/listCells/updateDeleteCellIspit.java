@@ -57,6 +57,9 @@ public class updateDeleteCellIspit extends JFXListCell<Ispit> {
         button.setCursor(Cursor.HAND);
         button1.setCursor(Cursor.HAND);
 
+        button.setId("btnObrisi");
+        button1.setId("btnIzmijeni");
+
         button.setOnAction(event -> {
             studyntDAO.obrisiIspit(getItem());
             getListView().getItems().remove(getItem());

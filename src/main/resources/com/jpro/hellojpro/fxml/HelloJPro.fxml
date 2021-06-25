@@ -102,7 +102,7 @@
                               <Font name="Verdana" size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXButton minHeight="45.0" minWidth="200.0" onAction="#otvoriGlavnuStranicu" style="-fx-background-color: #244f94;" text="Prijavite se" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                        <JFXButton fx:id="btnGlavna" minHeight="45.0" minWidth="200.0" onAction="#otvoriGlavnuStranicu" style="-fx-background-color: #244f94;" text="Prijavite se" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
                            <GridPane.margin>
                               <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                            </GridPane.margin>
