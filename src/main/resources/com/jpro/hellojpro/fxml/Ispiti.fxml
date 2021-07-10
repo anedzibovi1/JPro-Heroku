@@ -64,7 +64,7 @@
                             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <JFXButton fx:id="btnDodajIspit" onAction="#dodajIspitAction" style="-fx-background-color: #244f94;" text="Dodaj novi ispit" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                              <JFXButton fx:id="btnDodajIspit" onAction="#dodajIspitAction" style="-fx-background-color: #244f94;" text="Dodaj novi ispit" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                                  <font>
                                     <Font name="Verdana" size="16.0" />
                                  </font>
@@ -154,7 +154,7 @@
                                     <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
                                  </GridPane.margin>
                               </Text>
-                              <JFXButton fx:id="btnIzmijeniIspit" onAction="#izmijeniIspitAction" style="-fx-background-color: #244f94;" text="Izmijeni ispit" textFill="WHITE" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                              <JFXButton fx:id="btnIzmijeniIspit" onAction="#izmijeniIspitAction" style="-fx-background-color: #244f94;" text="Izmijeni ispit" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                                  <font>
                                     <Font name="Verdana" size="16.0" />
                                  </font>
@@ -167,7 +167,7 @@
                      </children>
                   </StackPane>
                   <JFXListView fx:id="lvIspiti" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
-                  <JFXButton fx:id="btnObrisiUnose" onAction="#obrisiUnoseAction" style="-fx-background-color: #244f94;" text="Novi ispit" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                  <JFXButton fx:id="btnObrisiUnose" onAction="#obrisiUnoseAction" style="-fx-background-color: #244f94;" text="Novi ispit" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                      <font>
                         <Font name="Verdana" size="16.0" />
                      </font>

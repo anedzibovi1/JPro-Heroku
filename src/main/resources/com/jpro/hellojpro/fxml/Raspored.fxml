@@ -154,7 +154,7 @@
                                           <Insets bottom="5.0" left="70.0" />
                                        </GridPane.margin>
                                     </JFXRadioButton>
-                                    <JFXButton fx:id="btnDodajCas" onAction="#dodajCasAction" style="-fx-background-color: #244f94;" text="Dodaj novi čas" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                                    <JFXButton fx:id="btnDodajCas" onAction="#dodajCasAction" style="-fx-background-color: #244f94;" text="Dodaj novi čas" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
                                        <GridPane.margin>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                        </GridPane.margin>
@@ -210,7 +210,7 @@
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
                                        </GridPane.margin>
                                     </Text>
-                                    <JFXButton fx:id="btnIzmijeniCas" onAction="#izmijeniCasAction" style="-fx-background-color: #244f94;" text="Izmijeni čas" textFill="WHITE" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+                                    <JFXButton fx:id="btnIzmijeniCas" onAction="#izmijeniCasAction" style="-fx-background-color: #244f94;" text="Izmijeni čas" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -250,7 +250,7 @@
                                           <Insets left="5.0" />
                                        </GridPane.margin>
                                     </Text>
-                                    <JFXButton fx:id="btnDodajNoviPredmet" onAction="#dodajPredmetAction" style="-fx-background-color: #244f94;" styleClass="tekst" text="Dodaj novi predmet" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                    <JFXButton fx:id="btnDodajNoviPredmet" onAction="#dodajPredmetAction" style="-fx-background-color: #244f94;" styleClass="tekst" text="Dodaj novi predmet" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                                        <font>
                                           <Font size="14.0" />
                                        </font>

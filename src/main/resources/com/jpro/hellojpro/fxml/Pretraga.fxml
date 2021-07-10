@@ -49,13 +49,13 @@
                                 </Text>
                             </children>
                         </StackPane>
-                  <JFXTextField fx:id="tfPretraga" promptText="Unesite naziv" styleClass="text" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                  <JFXTextField fx:id="tfPretraga" promptText="Unesite naziv" styleClass="text" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </JFXTextField>
                   <JFXListView fx:id="lvPretrage" styleClass="text" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
-                  <JFXComboBox fx:id="cbTip" promptText="Filtrirajte po tipu" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <JFXComboBox fx:id="cbTip" promptText="Filtrirajte po tipu" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                     </children>
                 </GridPane>
             </center>

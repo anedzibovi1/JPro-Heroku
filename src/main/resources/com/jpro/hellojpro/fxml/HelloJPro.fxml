@@ -73,7 +73,7 @@
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="btnRegistracija" minHeight="60.0" minWidth="400.0" mnemonicParsing="false" onAction="#otvoriRegistraciju" style="-fx-background-color: #ADC5EB;" styleClass="registracija" text="Nemate nalog? Registrujte se ovdje" textFill="#244f94" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BASELINE">
+                        <Button fx:id="btnRegistracija" minHeight="50.0" mnemonicParsing="false" onAction="#otvoriRegistraciju" style="-fx-background-color: #ADC5EB;" styleClass="registracija" text="Nemate nalog? Registrujte se ovdje" textAlignment="CENTER" textFill="#244f94" wrapText="true" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BASELINE">
                            <padding>
                               <Insets left="20.0" right="20.0" />
                            </padding>
@@ -108,13 +108,16 @@
                               <Font name="Verdana" size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXButton fx:id="btnGlavna" minHeight="45.0" minWidth="200.0" onAction="#otvoriGlavnuStranicu" style="-fx-background-color: #244f94;" text="Prijavite se" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                        <JFXButton fx:id="btnGlavna" minHeight="45.0" onAction="#otvoriGlavnuStranicu" style="-fx-background-color: #244f94;" text="Prijavite se" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
                            <GridPane.margin>
                               <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                            </GridPane.margin>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
                         </JFXButton>
                         <Text fx:id="tEmailLozinka" fill="#fc5855" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Neispravan email ili lozinka!" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                            <font>
