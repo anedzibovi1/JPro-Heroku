@@ -29,16 +29,16 @@
                 <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="30.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" percentHeight="20.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" percentHeight="40.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" percentHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" percentHeight="20.0" vgrow="ALWAYS" />
+                  <RowConstraints minHeight="10.0" percentHeight="40.0" vgrow="ALWAYS" />
+                <RowConstraints minHeight="10.0" percentHeight="40.0" vgrow="ALWAYS" />
               </rowConstraints>
                <children>
                   <GridPane GridPane.hgrow="ALWAYS">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -66,12 +66,12 @@
                         </StackPane>
                         <StackPane styleClass="stack-pane">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="big-text" text="Danas" StackPane.alignment="CENTER_LEFT">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="big-text" text="Danas" wrappingWidth="70.0" StackPane.alignment="CENTER_LEFT">
                                  <StackPane.margin>
                                     <Insets left="10.0" />
                                  </StackPane.margin>
                               </Text>
-                              <Text fx:id="tDatum" fill="#515151" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" StackPane.alignment="BOTTOM_LEFT">
+                              <Text fx:id="tDatum" fill="#515151" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="150.0" StackPane.alignment="BOTTOM_LEFT">
                                  <StackPane.margin>
                                     <Insets bottom="30.0" left="10.0" />
                                  </StackPane.margin>
@@ -104,8 +104,8 @@
                   </GridPane>
                   <GridPane GridPane.columnIndex="1" GridPane.hgrow="ALWAYS">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -113,7 +113,7 @@
                      <children>
                         <StackPane alignment="CENTER_LEFT" styleClass="stack-pane">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="big-text" text="Zadaci" StackPane.alignment="CENTER_LEFT">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="big-text" text="Zadaci" wrappingWidth="75.0" StackPane.alignment="CENTER_LEFT">
                                  <StackPane.margin>
                                     <Insets left="10.0" />
                                  </StackPane.margin>
@@ -146,8 +146,8 @@
                   </GridPane>
                   <GridPane GridPane.columnIndex="2" GridPane.hgrow="ALWAYS">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -155,7 +155,7 @@
                      <children>
                         <StackPane styleClass="stack-pane">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="big-text" text="Ispiti" StackPane.alignment="CENTER_LEFT">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="big-text" text="Ispiti" wrappingWidth="50.0" StackPane.alignment="CENTER_LEFT">
                                  <StackPane.margin>
                                     <Insets left="10.0" />
                                  </StackPane.margin>
@@ -333,6 +333,9 @@
                      </tooltip>
                   </JFXButton>
                </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </VBox>
          </left>
       </BorderPane>
