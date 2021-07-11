@@ -256,8 +256,6 @@ public class RasporedFXMLController implements Initializable {
         StackPane stackPane = loader.load();
         spRaspored.getChildren().setAll(stackPane);
 
-        spRaspored.getScene().getWindow().setOnShown(pretragaFXMLController::adjustUI);
-
     }
 
     public void otvoriPostavkeProfila(ActionEvent actionEvent) throws IOException {

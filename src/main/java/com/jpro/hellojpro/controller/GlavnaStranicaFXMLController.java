@@ -237,7 +237,6 @@ public class GlavnaStranicaFXMLController implements Initializable {
         StackPane stackPane = loader.load();
         spGlavnaStr.getChildren().setAll(stackPane);
 
-        spGlavnaStr.getScene().getWindow().setOnShown(pretragaFXMLController::adjustUI);
 
     }
 

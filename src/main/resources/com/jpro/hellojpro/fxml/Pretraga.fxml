@@ -51,7 +51,7 @@
                             </children>
                         </StackPane>
                   <JFXListView fx:id="lvPretrage" styleClass="text" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
-                  <HBox fx:id="hBoxP" alignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <HBox fx:id="hBoxP" alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <children>
                         <JFXTextField fx:id="tfPretraga" promptText="Unesite naziv" styleClass="text">
                            <font>
@@ -61,7 +61,7 @@
                         <JFXComboBox fx:id="cbTip" promptText="Filtrirajte po tipu" />
                      </children>
                   </HBox>
-                  <VBox fx:id="vBoxP" alignment="CENTER" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <VBox fx:id="vBoxP" alignment="CENTER_LEFT" spacing="100.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                     </children>
                 </GridPane>
             </center>

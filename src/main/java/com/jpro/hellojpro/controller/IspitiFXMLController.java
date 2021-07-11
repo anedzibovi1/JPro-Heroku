@@ -233,7 +233,6 @@ public class IspitiFXMLController implements Initializable {
         StackPane stackPane = loader.load();
         spIspiti.getChildren().setAll(stackPane);
 
-        spIspiti.getScene().getWindow().setOnShown(pretragaFXMLController::adjustUI);
 
     }
 

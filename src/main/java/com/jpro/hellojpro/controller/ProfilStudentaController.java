@@ -200,7 +200,6 @@ public class ProfilStudentaController implements Initializable {
         StackPane stackPane = loader.load();
         spProfilStudenta.getChildren().setAll(stackPane);
 
-        spProfilStudenta.getScene().getWindow().setOnShown(pretragaFXMLController::adjustUI);
 
     }
 

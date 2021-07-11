@@ -68,12 +68,6 @@ public class PretragaFXMLController implements Initializable {
     @FXML
     protected JFXButton btnPostavke;
 
-    @FXML
-    protected HBox hBoxP;
-
-    @FXML
-    protected VBox vBoxP;
-
 
     public PretragaFXMLController(Student student, StudyntDAO model) {
         this.student = student;
@@ -82,8 +76,6 @@ public class PretragaFXMLController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        vBoxP.setVisible(false);
         URL url = getClass().getResource(student.getSlika());
         Image imgStudent = new Image(String.valueOf(url), 60,60,true,true);
         ImageView viewStudent = new ImageView(imgStudent);
@@ -147,36 +139,6 @@ public class PretragaFXMLController implements Initializable {
         });
     }
 
-    public void adjustUI(WindowEvent windowEvent) {
-
-        spPretraga.getScene().widthProperty().addListener(new ChangeListener<Number>() {
-            @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
-                if(newSceneWidth.intValue() <= 600) {
-                    changeToSmallLayout();
-                } else {
-                    changeToLargeLayout();
-                }
-            }
-        });
-    }
-
-    private void changeToLargeLayout() {
-        vBoxP.getChildren().clear();
-        hBoxP.getChildren().clear();
-        hBoxP.setVisible(true);
-        vBoxP.setVisible(false);
-        hBoxP.getChildren().addAll(tfPretraga, cbTip);
-    }
-
-    private void changeToSmallLayout() {
-        hBoxP.getChildren().clear();
-        vBoxP.getChildren().clear();
-        hBoxP.setVisible(false);
-        vBoxP.setVisible(true);
-        vBoxP.getChildren().addAll(tfPretraga, cbTip);
-    }
-
-
     public void otvoriGlavnuStranicu(ActionEvent actionEvent) throws IOException {
         GlavnaStranicaFXMLController glavnaStranicaFXMLController = new GlavnaStranicaFXMLController(student, studyntDAO);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/jpro/hellojpro/fxml/GlavnaStranica.fxml"));
@@ -221,7 +183,6 @@ public class PretragaFXMLController implements Initializable {
         PretragaFXMLController pretragaFXMLController = new PretragaFXMLController(student, studyntDAO);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/jpro/hellojpro/fxml/Pretraga.fxml"));
         loader.setController(pretragaFXMLController);
-        spPretraga.getScene().getWindow().setOnShown(pretragaFXMLController::adjustUI);
         StackPane stackPane = loader.load();
         spPretraga.getChildren().setAll(stackPane);
     }

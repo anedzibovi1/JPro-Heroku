@@ -111,7 +111,6 @@ public class KalendarFXMLController implements Initializable {
         StackPane stackPane = loader.load();
         spKalendar.getChildren().setAll(stackPane);
 
-        spKalendar.getScene().getWindow().setOnShown(pretragaFXMLController::adjustUI);
 
     }
 
