@@ -31,9 +31,9 @@
          <children>
             <GridPane maxWidth="1.7976931348623157E308" style="-fx-background-color: #244f94;" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
               <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="20.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" percentWidth="60.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="20.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="15.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" percentWidth="70.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="15.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" percentHeight="30.0" vgrow="SOMETIMES" />
@@ -54,7 +54,7 @@
                    <ImageView fitHeight="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                        <Image url="@../img/students-ikona.png" />
                    </ImageView>
-                  <GridPane GridPane.columnSpan="3">
+                  <GridPane GridPane.columnIndex="1">
                     <columnConstraints>
                       <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" />
                       <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" />
