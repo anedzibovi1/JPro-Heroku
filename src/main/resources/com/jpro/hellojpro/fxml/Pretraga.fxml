@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
@@ -51,17 +50,29 @@
                             </children>
                         </StackPane>
                   <JFXListView fx:id="lvPretrage" styleClass="text" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
-                  <HBox fx:id="hBoxP" alignment="CENTER" spacing="10.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <GridPane GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="60.0" />
+                      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="40.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
                      <children>
-                        <JFXTextField fx:id="tfPretraga" promptText="Unesite naziv" styleClass="text">
+                        <JFXTextField fx:id="tfPretraga" promptText="Unesite naziv" styleClass="text" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
                            <font>
                               <Font size="22.0" />
                            </font>
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
                         </JFXTextField>
-                        <JFXComboBox fx:id="cbTip" promptText="Filtrirajte po tipu" />
+                        <JFXComboBox fx:id="cbTip" promptText="Filtrirajte po tipu" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin></JFXComboBox>
                      </children>
-                  </HBox>
-                  <VBox fx:id="vBoxP" alignment="CENTER_LEFT" spacing="100.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  </GridPane>
                     </children>
                 </GridPane>
             </center>
