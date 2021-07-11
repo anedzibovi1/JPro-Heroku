@@ -34,19 +34,20 @@
                 <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="20.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" percentHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" percentHeight="40.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                   <ImageView fitHeight="250.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                   <ImageView fitHeight="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                        <Image url="@../img/students-ikona.png" />
                    </ImageView>
-                  <Label fx:id="platformLabel" styleClass="platform-label" text="Platform: " GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+                  <Label fx:id="platformLabel" styleClass="platform-label" text="Platform: " GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
                      <GridPane.margin>
                         <Insets left="20.0" />
                      </GridPane.margin></Label>
-                  <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="DOBRODOŠLI NA STUDYNT!" wrappingWidth="537.7305603027344" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                  <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="DOBRODOŠLI NA STUDYNT!" textAlignment="CENTER" wrappingWidth="550.0" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                      <GridPane.margin>
                         <Insets bottom="30.0" />
                      </GridPane.margin>
@@ -108,7 +109,7 @@
                               <Font name="Verdana" size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXButton fx:id="btnGlavna" minHeight="45.0" onAction="#otvoriGlavnuStranicu" style="-fx-background-color: #244f94;" text="Prijavite se" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                        <JFXButton fx:id="btnGlavna" minHeight="45.0" onAction="#otvoriGlavnuStranicu" style="-fx-background-color: #244f94;" text="Prijavite se" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
                            <GridPane.margin>
                               <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
                            </GridPane.margin>
