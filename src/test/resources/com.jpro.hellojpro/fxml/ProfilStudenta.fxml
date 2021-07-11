@@ -25,22 +25,23 @@
          <center>
             <GridPane BorderPane.alignment="CENTER">
               <columnConstraints>
-                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="25.0" />
-                  <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="50.0" />
-                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="25.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="20.0" />
+                  <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="60.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="20.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" percentHeight="70.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" percentHeight="15.0" vgrow="ALWAYS" />
+                <RowConstraints minHeight="10.0" percentHeight="70.0" vgrow="ALWAYS" />
+                <RowConstraints minHeight="10.0" percentHeight="15.0" vgrow="ALWAYS" />
               </rowConstraints>
                <children>
                   <StackPane fx:id="spProfil" styleClass="stack-pane-border" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
                         <GridPane>
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="15.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="35.0" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
@@ -51,17 +52,17 @@
                               <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <JFXButton fx:id="btnObrisiProfil" onAction="#obrisiProfilAction" text="Obriši profil" textAlignment="CENTER" wrapText="true" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                              <JFXButton fx:id="btnObrisiProfil" onAction="#obrisiProfilAction" text="Obriši profil" textAlignment="CENTER" wrapText="true" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                                  <GridPane.margin>
                                     <Insets left="10.0" />
                                  </GridPane.margin>
                               </JFXButton>
-                              <JFXButton fx:id="btnSpasi" onAction="#izmijeniStudentaAction" text="Spasi promjene" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                              <JFXButton fx:id="btnSpasi" onAction="#izmijeniStudentaAction" text="Spasi promjene" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                                  <GridPane.margin>
-                                    <Insets left="10.0" />
+                                    <Insets right="10.0" />
                                  </GridPane.margin>
                               </JFXButton>
-                              <ImageView fx:id="ivSlikaProfila" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                              <ImageView fx:id="ivSlikaProfila" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                                  <GridPane.margin>
                                     <Insets left="10.0" />
                                  </GridPane.margin>
@@ -69,27 +70,27 @@
                                     <Image url="@../img/001-boy.png" />
                                  </image>
                               </ImageView>
-                              <JFXTextField fx:id="tfIme" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <JFXTextField fx:id="tfIme" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets left="10.0" right="10.0" />
                                  </GridPane.margin>
                               </JFXTextField>
-                              <JFXTextField fx:id="tfPrezime" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <JFXTextField fx:id="tfPrezime" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="10.0" right="10.0" />
                                  </GridPane.margin>
                               </JFXTextField>
-                              <JFXTextField fx:id="tfEmail" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <JFXTextField fx:id="tfEmail" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets left="10.0" right="10.0" />
                                  </GridPane.margin>
                               </JFXTextField>
-                              <JFXComboBox fx:id="cbNovaIkona" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                              <JFXComboBox fx:id="cbNovaIkona" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                                  <GridPane.margin>
                                     <Insets left="10.0" right="10.0" />
                                  </GridPane.margin>
                               </JFXComboBox>
-                              <VBox alignment="CENTER" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
+                              <VBox alignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
                                  <children>
                                     <TextFlow>
                                        <children>
@@ -101,7 +102,7 @@
                                     </TextFlow>
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                              <VBox alignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                                  <children>
                                     <TextFlow>
                                        <VBox.margin>
@@ -113,7 +114,7 @@
                                     </TextFlow>
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                              <VBox alignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                                  <children>
                                     <TextFlow>
                                        <children>
@@ -125,7 +126,7 @@
                                     </TextFlow>
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                              <VBox alignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                                  <children>
                                     <TextFlow>
                                        <children>
@@ -137,7 +138,7 @@
                                     </TextFlow>
                                  </children>
                               </VBox>
-                              <VBox alignment="CENTER" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                              <VBox alignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                                  <children>
                                     <TextFlow>
                                        <children>
@@ -158,7 +159,7 @@
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </Text>
-                  <JFXButton fx:id="btnOdjaviSe" onAction="#odjaviSeAction" text="Odjavi se" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <JFXButton fx:id="btnOdjaviSe" onAction="#odjaviSeAction" text="Odjavi se" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="10.0" right="10.0" />
                      </GridPane.margin>

@@ -39,9 +39,9 @@
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" percentHeight="15.0" vgrow="ALWAYS" />
-                  <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="ALWAYS" />
-                  <RowConstraints minHeight="10.0" percentHeight="50.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" percentHeight="25.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="30.0" vgrow="ALWAYS" />
+                  <RowConstraints minHeight="10.0" percentHeight="55.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="15.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
                   <StackPane style="-fx-background-color: white;" GridPane.columnSpan="3">
@@ -61,15 +61,31 @@
                         </ButtonBar>
                      </children>
                   </StackPane>
-                  <JFXListView fx:id="lvCasovi" styleClass="text" GridPane.rowIndex="2" GridPane.rowSpan="2" />
-                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="2">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" percentHeight="70.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" percentHeight="40.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <JFXListView fx:id="lvCasovi" styleClass="text" GridPane.rowIndex="1" GridPane.rowSpan="2" />
+                  <HBox alignment="CENTER_LEFT" spacing="50.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <children>
+                        <JFXComboBox fx:id="cbFilter" />
+                        <JFXButton fx:id="btnObrisiUnose" onAction="#obrisiUnoseAction" style="-fx-background-color: #244f94;" text="Novi čas" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </HBox>
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="3">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" percentHeight="70.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" percentHeight="40.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
                      <children>
                         <StackPane fx:id="spCas" styleClass="stack-pane-border">
                            <children>
@@ -98,11 +114,6 @@
                                           <Font size="14.0" />
                                        </font>
                                     </Text>
-                                    <ChoiceBox fx:id="cbTipCasa" style="-fx-background-color: white;" styleClass="tekst" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
-                                       <GridPane.margin>
-                                          <Insets left="5.0" />
-                                       </GridPane.margin>
-                                    </ChoiceBox>
                                     <JFXRadioButton fx:id="rbDa" selected="true" styleClass="tekst" text="Da" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
                                        <GridPane.margin>
                                           <Insets bottom="5.0" left="5.0" />
@@ -127,11 +138,6 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <DatePicker fx:id="dpDatumO" maxWidth="1.7976931348623157E308" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
-                                       <GridPane.margin>
-                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                       </GridPane.margin>
-                                    </DatePicker>
                                     <JFXButton fx:id="btnIzmijeniCas" onAction="#izmijeniCasAction" style="-fx-background-color: #244f94;" text="Izmijeni čas" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
                                        <font>
                                           <Font size="14.0" />
@@ -247,6 +253,11 @@
                                                 <Insets left="5.0" top="10.0" />
                                              </VBox.margin>
                                           </TextFlow>
+                                          <DatePicker fx:id="dpDatumO" maxWidth="1.7976931348623157E308">
+                                             <VBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                             </VBox.margin>
+                                          </DatePicker>
                                        </children>
                                     </VBox>
                                     <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -263,11 +274,16 @@
                                                 <Insets left="5.0" top="10.0" />
                                              </VBox.margin>
                                           </TextFlow>
+                                          <ChoiceBox fx:id="cbTipCasa" style="-fx-background-color: white;" styleClass="tekst">
+                                             <VBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                             </VBox.margin>
+                                          </ChoiceBox>
                                        </children>
                                     </VBox>
                                     <VBox prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                                        <children>
-                                          <TextFlow padding="$null">
+                                          <TextFlow>
                                              <children>
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tekst" text="Sedmično ponavljanje" wrappingWidth="100.0">
                                                    <font>
@@ -276,7 +292,7 @@
                                                 </Text>
                                              </children>
                                              <VBox.margin>
-                                                <Insets bottom="5.0" left="10.0" top="5.0" />
+                                                <Insets left="5.0" top="10.0" />
                                              </VBox.margin>
                                           </TextFlow>
                                        </children>
@@ -291,14 +307,14 @@
                         <StackPane fx:id="spPredmet" styleClass="stack-pane-border" GridPane.rowIndex="1">
                            <children>
                               <GridPane>
-                                <columnConstraints>
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                                </columnConstraints>
-                                <rowConstraints>
-                                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                                </rowConstraints>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
                                  <children>
                                     <JFXTextField fx:id="tfNazivPredmeta" styleClass="tekst" GridPane.columnSpan="2" GridPane.valignment="BOTTOM">
                                        <GridPane.margin>
@@ -330,22 +346,6 @@
                         </StackPane>
                      </children>
                   </GridPane>
-                  <HBox alignment="CENTER_LEFT" spacing="50.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
-                     <children>
-                        <JFXComboBox fx:id="cbFilter" />
-                        <JFXButton fx:id="btnObrisiUnose" onAction="#obrisiUnoseAction" style="-fx-background-color: #244f94;" text="Novi čas" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </JFXButton>
-                     </children>
-                     <GridPane.margin>
-                        <Insets left="10.0" />
-                     </GridPane.margin>
-                  </HBox>
                </children>
             </GridPane>
          </center>
