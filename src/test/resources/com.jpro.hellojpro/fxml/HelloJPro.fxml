@@ -22,8 +22,8 @@
    <children>
       <GridPane>
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="50.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" percentWidth="50.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" percentWidth="50.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
@@ -31,47 +31,41 @@
          <children>
             <GridPane maxWidth="1.7976931348623157E308" style="-fx-background-color: #244f94;" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
               <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="15.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" percentWidth="70.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="15.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" percentWidth="15.0" />
+                  <ColumnConstraints halignment="CENTER" minWidth="10.0" percentWidth="70.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="10.0" percentWidth="15.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" percentHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" percentHeight="5.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" percentHeight="40.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" percentHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <VBox alignment="BOTTOM_LEFT" GridPane.columnSpan="3" GridPane.rowIndex="2">
+                  <VBox alignment="BOTTOM_LEFT" GridPane.columnSpan="3" GridPane.rowIndex="3">
                      <children>
                         <TextFlow>
                            <children>
-                              <Label fx:id="platformLabel" styleClass="platform-label" text="Platform: " wrapText="true" />
+                              <Label fx:id="platformLabel" styleClass="platform-label" text="Platform: " wrapText="true">
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding></Label>
                            </children>
                         </TextFlow>
                      </children>
                   </VBox>
-                   <ImageView fitHeight="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                   <ImageView fitHeight="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                        <Image url="@../img/students-ikona.png" />
                    </ImageView>
-                  <GridPane GridPane.columnIndex="1">
-                    <columnConstraints>
-                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" />
-                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="10.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" valignment="BOTTOM" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <VBox GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <children>
-                        <TextFlow textAlignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="BASELINE">
+                        <TextFlow textAlignment="CENTER" VBox.vgrow="ALWAYS">
                            <children>
                               <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="big-text" text="DOBRODOŠLI NA STUDYNT!" textAlignment="CENTER" wrappingWidth="600.0" />
                            </children>
                         </TextFlow>
                      </children>
-                  </GridPane>
+                  </VBox>
                </children>
             </GridPane>
             <StackPane style="-fx-background-color: #fff;" GridPane.columnIndex="1" GridPane.vgrow="ALWAYS">

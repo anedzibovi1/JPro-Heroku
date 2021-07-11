@@ -155,7 +155,7 @@
                      <children>
                         <StackPane styleClass="stack-pane">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="big-text" text="Ispiti" wrappingWidth="50.0" StackPane.alignment="CENTER_LEFT">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="big-text" text="Ispiti" wrappingWidth="70.0" StackPane.alignment="CENTER_LEFT">
                                  <StackPane.margin>
                                     <Insets left="10.0" />
                                  </StackPane.margin>

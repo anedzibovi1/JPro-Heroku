@@ -64,15 +64,25 @@
                   <JFXListView fx:id="lvCasovi" styleClass="text" GridPane.rowIndex="1" GridPane.rowSpan="2" />
                   <HBox alignment="CENTER_LEFT" spacing="50.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                      <children>
-                        <JFXComboBox fx:id="cbFilter" />
-                        <JFXButton fx:id="btnObrisiUnose" onAction="#obrisiUnoseAction" style="-fx-background-color: #244f94;" text="Novi čas" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </JFXButton>
+                        <JFXComboBox fx:id="cbFilter">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin></JFXComboBox>
+                        <StackPane HBox.hgrow="ALWAYS">
+                           <children>
+                              <JFXButton fx:id="btnObrisiUnose" onAction="#obrisiUnoseAction" style="-fx-background-color: #244f94;" text="Novi čas" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true" StackPane.alignment="CENTER_RIGHT">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <StackPane.margin>
+                                    <Insets right="10.0" />
+                                 </StackPane.margin>
+                              </JFXButton>
+                           </children>
+                        </StackPane>
                      </children>
                      <GridPane.margin>
                         <Insets left="10.0" />
