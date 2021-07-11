@@ -35,6 +35,12 @@ public class GlavnaStranicaFXMLController implements Initializable {
     protected StackPane spGlavnaStr;
 
     @FXML
+    protected StackPane spCasovi;
+
+    @FXML
+    protected StackPane spIspiti;
+
+    @FXML
     protected Text tDatum;
 
     @FXML
@@ -179,6 +185,7 @@ public class GlavnaStranicaFXMLController implements Initializable {
         ft4.setToX(2);
         ft4.setToY(2);
         ft4.play();
+
     }
 
     public void otvoriGlavnuStranicu(ActionEvent actionEvent) throws IOException {

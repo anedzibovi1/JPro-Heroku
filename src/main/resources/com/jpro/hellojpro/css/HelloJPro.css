@@ -52,3 +52,9 @@
 .text {
     -fx-font-family: 'AppleGothic', Tahoma, Geneva, sans-serif;
 }
+
+.big-text {
+    -fx-font-family: Verdana;
+    -fx-font-weight: bold;
+    -fx-font-size: 32px;
+}

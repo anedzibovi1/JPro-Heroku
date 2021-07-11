@@ -22,23 +22,23 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane fx:id="spIspiti" minWidth="800.0" stylesheets="@../css/GlavnaStranica.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="spIspiti" stylesheets="@../css/GlavnaStranica.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0">
+      <BorderPane>
          <center>
             <GridPane style="-fx-background-color: white;" BorderPane.alignment="CENTER">
                <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
                </columnConstraints>
                <rowConstraints>
-                  <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="ALWAYS" />
-                  <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
-                  <RowConstraints minHeight="10.0" percentHeight="75.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="15.0" vgrow="ALWAYS" />
+                  <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="ALWAYS" />
+                  <RowConstraints minHeight="10.0" percentHeight="75.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white;" GridPane.columnSpan="3">
+                  <StackPane style="-fx-background-color: white;" GridPane.columnSpan="3" GridPane.hgrow="ALWAYS">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-text" text="Ispiti" StackPane.alignment="CENTER_LEFT">
                            <font>
@@ -50,21 +50,21 @@
                         </Text>
                      </children>
                   </StackPane>
-                  <StackPane fx:id="spIspit" style="-fx-background-color: #f0f5ff;" styleClass="stack-pane-border" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
+                  <StackPane fx:id="spIspit" style="-fx-background-color: #f0f5ff;" styleClass="stack-pane-border" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.rowSpan="2">
                      <children>
                         <GridPane>
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
                           </columnConstraints>
                           <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <JFXButton fx:id="btnDodajIspit" onAction="#dodajIspitAction" style="-fx-background-color: #244f94;" text="Dodaj novi ispit" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                              <JFXButton fx:id="btnDodajIspit" onAction="#dodajIspitAction" style="-fx-background-color: #244f94;" text="Dodaj novi ispit" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                                  <font>
                                     <Font name="Verdana" size="16.0" />
                                  </font>
@@ -154,7 +154,7 @@
                                     <Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
                                  </GridPane.margin>
                               </Text>
-                              <JFXButton fx:id="btnIzmijeniIspit" onAction="#izmijeniIspitAction" style="-fx-background-color: #244f94;" text="Izmijeni ispit" textFill="WHITE" visible="false" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                              <JFXButton fx:id="btnIzmijeniIspit" onAction="#izmijeniIspitAction" style="-fx-background-color: #244f94;" text="Izmijeni ispit" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                                  <font>
                                     <Font name="Verdana" size="16.0" />
                                  </font>
@@ -166,8 +166,8 @@
                         </GridPane>
                      </children>
                   </StackPane>
-                  <JFXListView fx:id="lvIspiti" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-                  <JFXButton fx:id="btnObrisiUnose" onAction="#obrisiUnoseAction" style="-fx-background-color: #244f94;" text="Novi ispit" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                  <JFXListView fx:id="lvIspiti" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                  <JFXButton fx:id="btnObrisiUnose" onAction="#obrisiUnoseAction" style="-fx-background-color: #244f94;" text="Novi ispit" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                      <font>
                         <Font name="Verdana" size="16.0" />
                      </font>
@@ -187,7 +187,7 @@
             </GridPane>
          </center>
          <left>
-            <VBox minWidth="70.0" style="-fx-background-color: #333;" BorderPane.alignment="CENTER">
+            <VBox style="-fx-background-color: #333;" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER">
                      <image>

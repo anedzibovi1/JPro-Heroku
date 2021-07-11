@@ -16,6 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
 <StackPane fx:id="spGlavnaStr" stylesheets="@../css/GlavnaStranica.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -23,9 +24,9 @@
          <center>
             <GridPane BorderPane.alignment="CENTER">
               <columnConstraints>
-                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
-                  <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
-                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="33.33" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="40.0" />
+                  <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="30.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="30.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" percentHeight="20.0" vgrow="SOMETIMES" />
@@ -43,7 +44,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <StackPane maxWidth="120.0" minWidth="120.0" styleClass="stack-pane" GridPane.columnIndex="1">
+                        <StackPane styleClass="stack-pane" GridPane.columnIndex="1">
                            <children>
                               <Text fx:id="tCasovi" fill="#868686" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" StackPane.alignment="CENTER">
                                  <StackPane.margin>
@@ -80,7 +81,7 @@
                               </Text>
                            </children>
                         </StackPane>
-                        <StackPane maxWidth="120.0" minWidth="120.0" styleClass="stack-pane" GridPane.columnIndex="2">
+                        <StackPane styleClass="stack-pane" GridPane.columnIndex="2">
                            <children>
                               <Text fx:id="tIspiti1" fill="#868686" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" StackPane.alignment="CENTER">
                                  <StackPane.margin>
@@ -122,7 +123,7 @@
                               <Insets left="10.0" />
                            </opaqueInsets>
                         </StackPane>
-                        <StackPane maxWidth="240.0" styleClass="stack-pane" GridPane.columnIndex="1">
+                        <StackPane styleClass="stack-pane" GridPane.columnIndex="1">
                            <children>
                               <Text fx:id="tZadaci" fill="#868686" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Text" StackPane.alignment="CENTER">
                                  <StackPane.margin>
@@ -152,7 +153,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <StackPane minWidth="105.0" styleClass="stack-pane">
+                        <StackPane styleClass="stack-pane">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="big-text" text="Ispiti" StackPane.alignment="CENTER_LEFT">
                                  <StackPane.margin>
@@ -193,24 +194,40 @@
                             <RowConstraints minHeight="10.0" percentHeight="50.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <StackPane prefHeight="150.0" prefWidth="200.0">
+                              <StackPane fx:id="spCasovi" prefHeight="150.0" prefWidth="200.0">
                                  <children>
                                     <JFXListView fx:id="lvCasovi" verticalGap="10.0" />
-                                    <Text fx:id="tNemaCasova" fill="#868686" strokeType="OUTSIDE" strokeWidth="0.0" text="Danas nemate časova" textAlignment="CENTER" wrappingWidth="300.0">
-                                       <font>
-                                          <Font name="AppleGothic Regular" size="30.0" />
-                                       </font>
-                                    </Text>
+                                    <VBox alignment="CENTER">
+                                       <children>
+                                          <TextFlow fx:id="tflowCas" textAlignment="CENTER">
+                                             <children>
+                                                <Text fx:id="tNemaCasova" fill="#868686" strokeType="OUTSIDE" strokeWidth="0.0" text="Danas nemate časova" textAlignment="CENTER" wrappingWidth="300.0">
+                                                   <font>
+                                                      <Font name="AppleGothic Regular" size="26.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </TextFlow>
+                                       </children>
+                                    </VBox>
                                  </children>
                               </StackPane>
-                              <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                              <StackPane fx:id="spIspiti" prefHeight="150.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
                                  <children>
                                     <JFXListView fx:id="lvIspiti1" verticalGap="10.0" />
-                                    <Text fx:id="tNemaIspita" fill="#868686" strokeType="OUTSIDE" strokeWidth="0.0" text="Danas nemate ispita">
-                                       <font>
-                                          <Font name="AppleGothic Regular" size="30.0" />
-                                       </font>
-                                    </Text>
+                                    <VBox alignment="CENTER" StackPane.alignment="CENTER">
+                                       <children>
+                                          <TextFlow fx:id="tflowIspit" textAlignment="CENTER">
+                                             <children>
+                                                <Text fx:id="tNemaIspita" fill="#868686" strokeType="OUTSIDE" strokeWidth="0.0" text="Danas nemate ispita" textAlignment="CENTER" wrappingWidth="300.0">
+                                                   <font>
+                                                      <Font name="AppleGothic Regular" size="26.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
+                                          </TextFlow>
+                                       </children>
+                                    </VBox>
                                  </children>
                               </StackPane>
                            </children>

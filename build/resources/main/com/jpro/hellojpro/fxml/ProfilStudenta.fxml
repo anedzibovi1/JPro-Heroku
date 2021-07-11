@@ -18,15 +18,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane fx:id="spProfilStudenta" minWidth="800.0" style="-fx-background-color: white;" stylesheets="@../css/ProfilStudenta.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="spProfilStudenta" style="-fx-background-color: white;" stylesheets="@../css/ProfilStudenta.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane>
          <center>
             <GridPane BorderPane.alignment="CENTER">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="25.0" />
+                  <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="50.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="25.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -38,16 +38,16 @@
                      <children>
                         <GridPane>
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                           </columnConstraints>
                           <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Slika profila">
@@ -70,12 +70,12 @@
                                     <Insets left="10.0" />
                                  </GridPane.margin>
                               </Text>
-                              <JFXButton fx:id="btnObrisiProfil" onAction="#obrisiProfilAction" text="Obriši profil" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                              <JFXButton fx:id="btnObrisiProfil" onAction="#obrisiProfilAction" text="Obriši profil" textAlignment="CENTER" wrapText="true" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                                  <GridPane.margin>
                                     <Insets left="10.0" />
                                  </GridPane.margin>
                               </JFXButton>
-                              <JFXButton fx:id="btnSpasi" onAction="#izmijeniStudentaAction" text="Spasi promjene" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                              <JFXButton fx:id="btnSpasi" onAction="#izmijeniStudentaAction" text="Spasi promjene" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                                  <GridPane.margin>
                                     <Insets left="10.0" />
                                  </GridPane.margin>
@@ -121,7 +121,7 @@
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </Text>
-                  <JFXButton fx:id="btnOdjaviSe" onAction="#odjaviSeAction" text="Odjavi se" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                  <JFXButton fx:id="btnOdjaviSe" onAction="#odjaviSeAction" text="Odjavi se" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="10.0" right="10.0" />
                      </GridPane.margin>
@@ -141,7 +141,7 @@
             </GridPane>
          </center>
          <left>
-            <VBox minWidth="70.0" style="-fx-background-color: #333;" BorderPane.alignment="CENTER">
+            <VBox style="-fx-background-color: #333;" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="NEVER">
                      <image>

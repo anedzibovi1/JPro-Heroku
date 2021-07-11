@@ -163,16 +163,10 @@ public class StudyntDAO {
             ResultSet rs = dajStudenteUpit.executeQuery();
             if(!rs.next()) {
 
-                students.add(new Student("Meho", "Kaspic", "mkaspic1@etf.unsa.ba", "mkaspic111"));
                 students.add(new Student("Amila", "Nedzibovic", "anedzibovi1@etf.unsa.ba", "amilan0712"));
-                students.add(new Student("Nedo", "Pravic", "npravic1@etf.unsa.ba", "npravic111"));
-                students.add(new Student("Ledo", "Pekmezic", "lpekmezic1@etf.unsa.ba", "lpekmezic111"));
 
                 dodajStudenta(new Student());
                 dodajStudenta(students.get(0));
-                dodajStudenta(students.get(1));
-                dodajStudenta(students.get(2));
-                dodajStudenta(students.get(3));
 
             }
             else {
@@ -194,22 +188,14 @@ public class StudyntDAO {
             ResultSet rs = dajPredmeteUpit.executeQuery();
             if(!rs.next()) {
 
-                predmets.add(new Predmet("RPR", studenti.get(2)));
-                predmets.add(new Predmet("SI", studenti.get(2)));
-                predmets.add(new Predmet("VI", studenti.get(2)));
-                predmets.add(new Predmet("PIS", studenti.get(3)));
-                predmets.add(new Predmet("OSP", studenti.get(3)));
-                predmets.add(new Predmet("RG", studenti.get(1)));
                 predmets.add(new Predmet("RPR", studenti.get(1)));
+                predmets.add(new Predmet("SI", studenti.get(1)));
+                predmets.add(new Predmet("VI", studenti.get(1)));
 
                 dodajPredmet(new Predmet());
                 dodajPredmet(predmets.get(0));
                 dodajPredmet(predmets.get(1));
                 dodajPredmet(predmets.get(2));
-                dodajPredmet(predmets.get(3));
-                dodajPredmet(predmets.get(4));
-                dodajPredmet(predmets.get(5));
-                dodajPredmet(predmets.get(6));
 
             }
             else {
@@ -244,23 +230,12 @@ public class StudyntDAO {
                 cass.add(new Cas(LocalDate.of(2021,6,5), LocalTime.of(13,15), LocalTime.of(14,00), "Tutorijal", predmeti.get(1), "Da"));
                 cass.add(new Cas(LocalDate.of(2021,6,5), LocalTime.of(14,15), LocalTime.of(15,00), "Predavanje", predmeti.get(2), "Da"));
                 cass.add(new Cas(LocalDate.of(2021,7,1), LocalTime.of(10,00), LocalTime.of(12,00), "Tutorijal", predmeti.get(1), "Da"));
-                cass.add(new Cas(LocalDate.of(2021,6,2), LocalTime.of(8,15), LocalTime.of(10,00), "Predavanje", predmeti.get(3), "Ne"));
-                cass.add(new Cas(LocalDate.of(2021,5,25), LocalTime.of(12,15), LocalTime.of(13,15), "Tutorijal", predmeti.get(3), "Da"));
-
-                cass.add(new Cas(LocalDate.of(2021,6,20), LocalTime.of(10,15), LocalTime.of(11,00), "Predavanje", predmeti.get(4), "Da"));
-                cass.add(new Cas(LocalDate.of(2021,6,16), LocalTime.of(15,30), LocalTime.of(17,00), "Predavanje", predmeti.get(5), "Ne"));
-                cass.add(new Cas(LocalDate.of(2021,6,22), LocalTime.of(8,00), LocalTime.of(10,45), "Tutorijal", predmeti.get(5), "Ne"));
 
 
                 dodajCas(new Cas());
                 dodajCas(cass.get(0));
                 dodajCas(cass.get(1));
                 dodajCas(cass.get(2));
-                dodajCas(cass.get(3));
-                dodajCas(cass.get(4));
-                dodajCas(cass.get(5));
-                dodajCas(cass.get(6));
-                dodajCas(cass.get(7));
 
             }
             else {
@@ -297,16 +272,12 @@ public class StudyntDAO {
             ResultSet rs = dajIspiteUpit.executeQuery();
             if(!rs.next()) {
 
-                ispits.add(new Ispit("II parcijala", LocalDate.of(2021,6,8), LocalTime.of(10,00), LocalTime.of(11,00), predmeti.get(2)));
-                ispits.add(new Ispit("II provjera znanja", LocalDate.of(2021,6,10), LocalTime.of(14,00), LocalTime.of(14,30), predmeti.get(3)));
-                ispits.add(new Ispit("Zavrsni", LocalDate.of(2021,6,23), LocalTime.of(11,00), LocalTime.of(12,15), predmeti.get(3)));
-                ispits.add(new Ispit("II parcijala", LocalDate.of(2021,6,20), LocalTime.of(13,45), LocalTime.of(15,00), predmeti.get(1)));
+                ispits.add(new Ispit("II parcijala", LocalDate.of(2021,7,8), LocalTime.of(10,00), LocalTime.of(11,00), predmeti.get(2)));
+                ispits.add(new Ispit("II parcijala", LocalDate.of(2021,7,20), LocalTime.of(13,45), LocalTime.of(15,00), predmeti.get(1)));
 
                 dodajIspit(new Ispit());
                 dodajIspit(ispits.get(0));
                 dodajIspit(ispits.get(1));
-                dodajIspit(ispits.get(2));
-                dodajIspit(ispits.get(3));
 
             }
             else {

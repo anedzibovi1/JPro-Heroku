@@ -7,6 +7,7 @@ import com.jpro.hellojpro.model.Student;
 import com.jpro.webapi.JProApplication;
 import com.jpro.webapi.WebAPI;
 import javafx.animation.FadeTransition;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,6 +27,10 @@ public class StudyntFXMLController implements Initializable {
 
     private StudyntDAO model;
     public Label platformLabel;
+
+    private SimpleBooleanProperty expanded = new SimpleBooleanProperty(true);
+
+
     @FXML
     protected StackPane rootPane;
 
@@ -48,8 +53,8 @@ public class StudyntFXMLController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         model = StudyntDAO.getInstance();
         tEmailLozinka.setVisible(false);
-        //tfEmail.setText(model.getStudenti().get(1).getEmail());
-        //pfPassword.setText(model.getStudenti().get(1).getPassword());
+        //tfEmail.setText(model.getStudenti().get(0).getEmail());
+        //pfPassword.setText(model.getStudenti().get(0).getPassword());
         platformLabel.setText(String.format("Platform: %s", WebAPI.isBrowser() ? "Browser" : "Desktop"));
     }
 
