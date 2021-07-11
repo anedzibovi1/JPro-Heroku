@@ -51,21 +51,27 @@
                         </TextFlow>
                      </children>
                   </VBox>
-                  <VBox alignment="BOTTOM_CENTER" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
-                     <children>
-                        <TextFlow textAlignment="CENTER">
-                           <children>
-                              <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="big-text" text="DOBRODOŠLI NA STUDYNT!" textAlignment="CENTER" wrappingWidth="600.0" />
-                           </children>
-                           <VBox.margin>
-                              <Insets left="10.0" right="10.0" />
-                           </VBox.margin>
-                        </TextFlow>
-                     </children>
-                  </VBox>
                    <ImageView fitHeight="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                        <Image url="@../img/students-ikona.png" />
                    </ImageView>
+                  <GridPane GridPane.columnSpan="3">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextFlow textAlignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="BASELINE">
+                           <children>
+                              <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="big-text" text="DOBRODOŠLI NA STUDYNT!" textAlignment="CENTER" wrappingWidth="600.0" />
+                           </children>
+                        </TextFlow>
+                     </children>
+                  </GridPane>
                </children>
             </GridPane>
             <StackPane style="-fx-background-color: #fff;" GridPane.columnIndex="1" GridPane.vgrow="ALWAYS">
@@ -98,7 +104,7 @@
                         </Button>
                         <Text fill="#244f94" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Prijava" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
                            <GridPane.margin>
-                              <Insets left="40.0" />
+                              <Insets left="20.0" />
                            </GridPane.margin>
                            <font>
                               <Font size="30.0" />
@@ -106,7 +112,7 @@
                         </Text>
                         <JFXPasswordField fx:id="pfPassword" promptText="Password" styleClass="text" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                            <GridPane.margin>
-                              <Insets left="40.0" right="40.0" />
+                              <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                            <font>
                               <Font name="Verdana" size="14.0" />
@@ -114,15 +120,15 @@
                         </JFXPasswordField>
                         <JFXTextField fx:id="tfEmail" promptText="Email" styleClass="text" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                            <GridPane.margin>
-                              <Insets left="40.0" right="40.0" />
+                              <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                            <font>
                               <Font name="Verdana" size="14.0" />
                            </font>
                         </JFXTextField>
-                        <JFXButton fx:id="btnGlavna" minHeight="45.0" onAction="#otvoriGlavnuStranicu" style="-fx-background-color: #244f94;" text="Prijavite se" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+                        <JFXButton fx:id="btnGlavna" minHeight="45.0" onAction="#otvoriGlavnuStranicu" style="-fx-background-color: #244f94;" text="Prijavite se" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnSpan="3" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="TOP">
                            <GridPane.margin>
-                              <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                              <Insets right="20.0" />
                            </GridPane.margin>
                            <cursor>
                               <Cursor fx:constant="HAND" />
