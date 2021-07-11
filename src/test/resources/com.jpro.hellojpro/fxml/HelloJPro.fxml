@@ -22,7 +22,7 @@
    <children>
       <GridPane>
         <columnConstraints>
-          <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" percentWidth="50.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" percentWidth="50.0" prefWidth="1000.0" />
           <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" percentWidth="50.0" />
         </columnConstraints>
         <rowConstraints>
@@ -57,14 +57,20 @@
                    <ImageView fitHeight="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                        <Image url="@../img/students-ikona.png" />
                    </ImageView>
-                  <VBox GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                  <VBox GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <children>
                         <TextFlow textAlignment="CENTER" VBox.vgrow="ALWAYS">
                            <children>
                               <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="big-text" text="DOBRODOŠLI NA STUDYNT!" textAlignment="CENTER" wrappingWidth="600.0" />
                            </children>
+                           <VBox.margin>
+                              <Insets left="40.0" right="40.0" />
+                           </VBox.margin>
                         </TextFlow>
                      </children>
+                     <GridPane.margin>
+                        <Insets left="40.0" right="40.0" />
+                     </GridPane.margin>
                   </VBox>
                </children>
             </GridPane>
