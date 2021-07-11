@@ -226,6 +226,8 @@ public class GlavnaStranicaFXMLController implements Initializable {
         loader.setController(rasporedFXMLController);
         StackPane stackPane = loader.load();
         spGlavnaStr.getChildren().setAll(stackPane);
+
+
     }
 
     public void otvoriPretragu(ActionEvent actionEvent) throws IOException {
@@ -234,6 +236,9 @@ public class GlavnaStranicaFXMLController implements Initializable {
         loader.setController(pretragaFXMLController);
         StackPane stackPane = loader.load();
         spGlavnaStr.getChildren().setAll(stackPane);
+
+        spGlavnaStr.getScene().getWindow().setOnShown(pretragaFXMLController::adjustUI);
+
     }
 
     public void otvoriPostavkeProfila(ActionEvent actionEvent) throws IOException {

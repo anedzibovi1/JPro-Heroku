@@ -53,8 +53,9 @@ class PretragaFXMLControllerTest {
         loader.setController(ctrl);
         Parent root = loader.load();
         stage.setTitle("Pretraga");
-        stage.setScene(new Scene(root, 1500, 800));
+        stage.setScene(new Scene(root, 500, 800));
         stage.setResizable(false);
+        stage.setOnShown(ctrl::adjustUI);
         stage.show();
         stage.toFront();
         theStage = stage;

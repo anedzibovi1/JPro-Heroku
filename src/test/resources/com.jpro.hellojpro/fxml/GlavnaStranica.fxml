@@ -197,7 +197,7 @@
                               <StackPane fx:id="spCasovi" prefHeight="150.0" prefWidth="200.0">
                                  <children>
                                     <JFXListView fx:id="lvCasovi" verticalGap="10.0" />
-                                    <VBox alignment="CENTER">
+                                    <VBox alignment="CENTER" StackPane.alignment="CENTER">
                                        <children>
                                           <TextFlow fx:id="tflowCas" textAlignment="CENTER">
                                              <children>
@@ -207,6 +207,9 @@
                                                    </font>
                                                 </Text>
                                              </children>
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </VBox.margin>
                                           </TextFlow>
                                        </children>
                                     </VBox>
@@ -225,6 +228,9 @@
                                                    </font>
                                                 </Text>
                                              </children>
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </VBox.margin>
                                           </TextFlow>
                                        </children>
                                     </VBox>

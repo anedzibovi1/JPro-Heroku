@@ -232,6 +232,9 @@ public class IspitiFXMLController implements Initializable {
         loader.setController(pretragaFXMLController);
         StackPane stackPane = loader.load();
         spIspiti.getChildren().setAll(stackPane);
+
+        spIspiti.getScene().getWindow().setOnShown(pretragaFXMLController::adjustUI);
+
     }
 
     public void otvoriPostavkeProfila(ActionEvent actionEvent) throws IOException {

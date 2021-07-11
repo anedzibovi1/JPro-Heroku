@@ -42,7 +42,16 @@
                 <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <VBox alignment="BOTTOM_CENTER" GridPane.columnSpan="3">
+                  <VBox alignment="BOTTOM_LEFT" GridPane.columnSpan="3" GridPane.rowIndex="2">
+                     <children>
+                        <TextFlow>
+                           <children>
+                              <Label fx:id="platformLabel" styleClass="platform-label" text="Platform: " wrapText="true" />
+                           </children>
+                        </TextFlow>
+                     </children>
+                  </VBox>
+                  <VBox alignment="BOTTOM_CENTER" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                      <children>
                         <TextFlow textAlignment="CENTER">
                            <children>
@@ -57,10 +66,6 @@
                    <ImageView fitHeight="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                        <Image url="@../img/students-ikona.png" />
                    </ImageView>
-                  <Label fx:id="platformLabel" styleClass="platform-label" text="Platform: " GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
-                     <GridPane.margin>
-                        <Insets bottom="10.0" left="20.0" />
-                     </GridPane.margin></Label>
                </children>
             </GridPane>
             <StackPane style="-fx-background-color: #fff;" GridPane.columnIndex="1" GridPane.vgrow="ALWAYS">

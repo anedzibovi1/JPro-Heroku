@@ -6,6 +6,8 @@ import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import com.jpro.hellojpro.StudyntDAO;
 import com.jpro.hellojpro.model.Student;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -16,7 +18,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -63,6 +68,12 @@ public class PretragaFXMLController implements Initializable {
     @FXML
     protected JFXButton btnPostavke;
 
+    @FXML
+    protected HBox hBoxP;
+
+    @FXML
+    protected VBox vBoxP;
+
 
     public PretragaFXMLController(Student student, StudyntDAO model) {
         this.student = student;
@@ -72,11 +83,11 @@ public class PretragaFXMLController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        vBoxP.setVisible(false);
         URL url = getClass().getResource(student.getSlika());
         Image imgStudent = new Image(String.valueOf(url), 60,60,true,true);
         ImageView viewStudent = new ImageView(imgStudent);
         btnPostavke.setGraphic(viewStudent);
-
 
         ArrayList<String> objekti = studyntDAO.getCasoviStudent(student.getId()).stream().map(c -> "Cas: " + c.toString()).collect(Collectors.toCollection(ArrayList::new));
         objekti.addAll(studyntDAO.getIspitiStudent(student.getId()).stream().map(i -> "Ispit: " + i.toString()).collect(Collectors.toList()));
@@ -136,6 +147,36 @@ public class PretragaFXMLController implements Initializable {
         });
     }
 
+    public void adjustUI(WindowEvent windowEvent) {
+
+        spPretraga.getScene().widthProperty().addListener(new ChangeListener<Number>() {
+            @Override public void changed(ObservableValue<? extends Number> observableValue, Number oldSceneWidth, Number newSceneWidth) {
+                if(newSceneWidth.intValue() <= 600) {
+                    changeToSmallLayout();
+                } else {
+                    changeToLargeLayout();
+                }
+            }
+        });
+    }
+
+    private void changeToLargeLayout() {
+        vBoxP.getChildren().clear();
+        hBoxP.getChildren().clear();
+        hBoxP.setVisible(true);
+        vBoxP.setVisible(false);
+        hBoxP.getChildren().addAll(tfPretraga, cbTip);
+    }
+
+    private void changeToSmallLayout() {
+        hBoxP.getChildren().clear();
+        vBoxP.getChildren().clear();
+        hBoxP.setVisible(false);
+        vBoxP.setVisible(true);
+        vBoxP.getChildren().addAll(tfPretraga, cbTip);
+    }
+
+
     public void otvoriGlavnuStranicu(ActionEvent actionEvent) throws IOException {
         GlavnaStranicaFXMLController glavnaStranicaFXMLController = new GlavnaStranicaFXMLController(student, studyntDAO);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/jpro/hellojpro/fxml/GlavnaStranica.fxml"));
@@ -180,6 +221,7 @@ public class PretragaFXMLController implements Initializable {
         PretragaFXMLController pretragaFXMLController = new PretragaFXMLController(student, studyntDAO);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/jpro/hellojpro/fxml/Pretraga.fxml"));
         loader.setController(pretragaFXMLController);
+        spPretraga.getScene().getWindow().setOnShown(pretragaFXMLController::adjustUI);
         StackPane stackPane = loader.load();
         spPretraga.getChildren().setAll(stackPane);
     }

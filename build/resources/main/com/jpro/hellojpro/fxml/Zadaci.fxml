@@ -21,6 +21,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
 <StackPane fx:id="spZadaci" stylesheets="@../css/GlavnaStranica.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -72,46 +73,16 @@
                                     <Insets right="5.0" />
                                  </GridPane.margin>
                               </JFXButton>
-                              <ChoiceBox fx:id="cbPredmet" style="-fx-background-color: white;" styleClass="tekst">
-                                 <GridPane.margin>
-                                    <Insets left="5.0" />
-                                 </GridPane.margin>
-                              </ChoiceBox>
-                              <JFXTextField fx:id="tfNaziv" styleClass="tekst" GridPane.rowIndex="1">
-                                 <GridPane.margin>
-                                    <Insets left="5.0" right="10.0" />
-                                 </GridPane.margin>
-                              </JFXTextField>
                               <JFXTextArea fx:id="taOpis" styleClass="tekst" GridPane.columnSpan="2" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets left="5.0" right="5.0" top="30.0" />
                                  </GridPane.margin>
                               </JFXTextArea>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tekst" text="Predmet" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets left="5.0" top="25.0" />
-                                 </GridPane.margin>
-                              </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tekst" text="Naziv" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets left="5.0" top="25.0" />
-                                 </GridPane.margin>
-                              </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tekst" text="Datum završetka" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
-                                 <GridPane.margin>
-                                    <Insets left="5.0" top="25.0" />
-                                 </GridPane.margin>
-                              </Text>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tekst" text="Opis" GridPane.rowIndex="2" GridPane.valignment="TOP">
                                  <GridPane.margin>
                                     <Insets left="5.0" top="10.0" />
                                  </GridPane.margin>
                               </Text>
-                              <DatePicker fx:id="dpDatumZ" maxWidth="1.7976931348623157E308" styleClass="tekst" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                 <GridPane.margin>
-                                    <Insets left="5.0" right="5.0" />
-                                 </GridPane.margin>
-                              </DatePicker>
                               <JFXButton fx:id="btnIzmijeniZadatak" onAction="#izmijeniZadatakAction" style="-fx-background-color: #244f94;" styleClass="tekst" text="Izmijeni zadatak" textAlignment="CENTER" textFill="WHITE" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="14.0" />
@@ -120,6 +91,76 @@
                                     <Insets right="5.0" />
                                  </GridPane.margin>
                               </JFXButton>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" percentHeight="50.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" percentHeight="50.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <ChoiceBox fx:id="cbPredmet" style="-fx-background-color: white;" styleClass="tekst" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </ChoiceBox>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tekst" text="Predmet" GridPane.valignment="BOTTOM">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.rowIndex="1">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <JFXTextField fx:id="tfNaziv" styleClass="tekst" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" right="10.0" />
+                                       </GridPane.margin>
+                                    </JFXTextField>
+                                    <TextFlow GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tekst" text="Naziv" />
+                                       </children>
+                                       <GridPane.margin>
+                                          <Insets left="5.0" top="20.0" />
+                                       </GridPane.margin>
+                                    </TextFlow>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <DatePicker fx:id="dpDatumZ" maxWidth="1.7976931348623157E308" styleClass="tekst" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </GridPane.margin>
+                                    </DatePicker>
+                                    <TextFlow GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM">
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="tekst" text="Datum završetka" wrappingWidth="100.0" />
+                                       </children>
+                                       <GridPane.margin>
+                                          <Insets left="5.0" top="20.0" />
+                                       </GridPane.margin>
+                                    </TextFlow>
+                                 </children>
+                              </GridPane>
                            </children>
                         </GridPane>
                      </children>

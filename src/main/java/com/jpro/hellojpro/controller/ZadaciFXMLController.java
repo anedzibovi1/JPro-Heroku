@@ -170,6 +170,7 @@ public class ZadaciFXMLController implements Initializable {
         loader.setController(pretragaFXMLController);
         StackPane stackPane = loader.load();
         spZadaci.getChildren().setAll(stackPane);
+        spZadaci.getScene().getWindow().setOnShown(pretragaFXMLController::adjustUI);
     }
 
     public void otvoriPostavkeProfila(ActionEvent actionEvent) throws IOException {

@@ -199,6 +199,9 @@ public class ProfilStudentaController implements Initializable {
         loader.setController(pretragaFXMLController);
         StackPane stackPane = loader.load();
         spProfilStudenta.getChildren().setAll(stackPane);
+
+        spProfilStudenta.getScene().getWindow().setOnShown(pretragaFXMLController::adjustUI);
+
     }
 
     public void otvoriPostavkeProfila(ActionEvent actionEvent) throws IOException {

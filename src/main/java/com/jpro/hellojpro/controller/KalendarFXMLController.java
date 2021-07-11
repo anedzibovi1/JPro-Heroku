@@ -110,6 +110,9 @@ public class KalendarFXMLController implements Initializable {
         loader.setController(pretragaFXMLController);
         StackPane stackPane = loader.load();
         spKalendar.getChildren().setAll(stackPane);
+
+        spKalendar.getScene().getWindow().setOnShown(pretragaFXMLController::adjustUI);
+
     }
 
     public void otvoriPostavkeProfila(ActionEvent actionEvent) throws IOException {
