@@ -37,7 +37,8 @@
                <rowConstraints>
                   <RowConstraints minHeight="10.0" percentHeight="15.0" vgrow="ALWAYS" />
                   <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="ALWAYS" />
-                  <RowConstraints minHeight="10.0" percentHeight="75.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="65.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
                   <StackPane style="-fx-background-color: white;" GridPane.columnSpan="3" GridPane.hgrow="ALWAYS">
@@ -52,7 +53,7 @@
                         </Text>
                      </children>
                   </StackPane>
-                  <StackPane fx:id="spIspit" style="-fx-background-color: #f0f5ff;" styleClass="stack-pane-border" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.rowSpan="2">
+                  <StackPane fx:id="spIspit" style="-fx-background-color: #f0f5ff;" styleClass="stack-pane-border" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.vgrow="ALWAYS">
                      <children>
                         <GridPane>
                           <columnConstraints>
@@ -208,18 +209,25 @@
                         </GridPane>
                      </children>
                   </StackPane>
-                  <JFXListView fx:id="lvIspiti" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
-                  <HBox alignment="CENTER_LEFT" spacing="50.0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <JFXListView fx:id="lvIspiti" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.rowSpan="2" />
+                  <HBox alignment="CENTER_LEFT" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                      <children>
                         <JFXComboBox fx:id="cbFilter" HBox.hgrow="ALWAYS" />
-                        <JFXButton fx:id="btnObrisiUnose" onAction="#obrisiUnoseAction" style="-fx-background-color: #244f94;" text="Novi ispit" textAlignment="CENTER" textFill="WHITE" wrapText="true" HBox.hgrow="ALWAYS">
-                           <font>
-                              <Font name="Verdana" size="16.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </JFXButton>
+                        <StackPane HBox.hgrow="ALWAYS">
+                           <children>
+                              <JFXButton fx:id="btnObrisiUnose" onAction="#obrisiUnoseAction" style="-fx-background-color: #244f94;" text="Novi ispit" textAlignment="CENTER" textFill="WHITE" wrapText="true" StackPane.alignment="CENTER_RIGHT">
+                                 <font>
+                                    <Font name="Verdana" size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <StackPane.margin>
+                                    <Insets right="10.0" />
+                                 </StackPane.margin>
+                              </JFXButton>
+                           </children>
+                        </StackPane>
                      </children>
                      <GridPane.margin>
                         <Insets left="10.0" right="10.0" />

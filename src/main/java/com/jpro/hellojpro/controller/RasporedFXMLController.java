@@ -177,7 +177,10 @@ public class RasporedFXMLController implements Initializable {
     }
 
     public void dodajCasAction(ActionEvent actionEvent) {
-        String noviDatumString = dpDatumO.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        String noviDatumString = "";
+        if(dpDatumO.getValue() != null)
+            noviDatumString = dpDatumO.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
         LocalDate noviDatum = LocalDate.parse(noviDatumString);
         LocalTime novoVrijemeP, novoVrijemeK;
         String satiP = sSatiP.getValue().toString();
@@ -203,10 +206,12 @@ public class RasporedFXMLController implements Initializable {
 
 
         JFXRadioButton ponavljanjeRB = (JFXRadioButton) ponavljanje.getSelectedToggle();
-        Cas noviCas = new Cas(noviDatum, novoVrijemeP, novoVrijemeK, cbTipCasa.getValue(), cbPredmet.getValue(), ponavljanjeRB.getText());
-        studyntDAO.dodajCas(noviCas);
-        lvCasovi.getItems().add(noviCas);
-        lvCasovi.refresh();
+        if(novoVrijemeP.isBefore(novoVrijemeK) && noviDatum != null) {
+            Cas noviCas = new Cas(noviDatum, novoVrijemeP, novoVrijemeK, cbTipCasa.getValue(), cbPredmet.getValue(), ponavljanjeRB.getText());
+            studyntDAO.dodajCas(noviCas);
+            lvCasovi.getItems().add(noviCas);
+            lvCasovi.refresh();
+        }
     }
 
     public void otvoriGlavnuStranicu(ActionEvent actionEvent) throws IOException {
@@ -269,18 +274,20 @@ public class RasporedFXMLController implements Initializable {
     public void izmijeniCasAction(ActionEvent actionEvent) {
         Cas cas = lvCasovi.getSelectionModel().getSelectedItem();
 
-        Cas noviCas = new Cas();
-        noviCas.setId(cas.getId());
-        noviCas.setDatumOdrzavanja(dpDatumO.getValue());
-        noviCas.setVrijemePocetka(LocalTime.of(sSatiP.getValue(),sMinuteP.getValue()));
-        noviCas.setVrijemeKraja(LocalTime.of(sSatiK.getValue(),sMinuteK.getValue()));
-        noviCas.setTipCasa(cbTipCasa.getSelectionModel().getSelectedItem());
-        noviCas.setPredmet(cbPredmet.getSelectionModel().getSelectedItem());
-        RadioButton rb = (RadioButton) ponavljanje.getSelectedToggle();
-        noviCas.setPonavljanje(rb.getText());
+        if(LocalTime.of(sSatiP.getValue(),sMinuteP.getValue()).isBefore(LocalTime.of(sSatiK.getValue(),sMinuteK.getValue())) && dpDatumO != null) {
+            Cas noviCas = new Cas();
+            noviCas.setId(cas.getId());
+            noviCas.setDatumOdrzavanja(dpDatumO.getValue());
+            noviCas.setVrijemePocetka(LocalTime.of(sSatiP.getValue(),sMinuteP.getValue()));
+            noviCas.setVrijemeKraja(LocalTime.of(sSatiK.getValue(),sMinuteK.getValue()));
+            noviCas.setTipCasa(cbTipCasa.getSelectionModel().getSelectedItem());
+            noviCas.setPredmet(cbPredmet.getSelectionModel().getSelectedItem());
+            RadioButton rb = (RadioButton) ponavljanje.getSelectedToggle();
+            noviCas.setPonavljanje(rb.getText());
 
-        studyntDAO.izmijeniCas(noviCas);
-        lvCasovi.refresh();
+            studyntDAO.izmijeniCas(noviCas);
+            lvCasovi.refresh();
+        }
     }
 
     public void obrisiUnoseAction(ActionEvent actionEvent) {

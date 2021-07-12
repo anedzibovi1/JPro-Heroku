@@ -48,7 +48,7 @@ public class RasporedFXMLControllerTest {
         loader.setController(ctrl);
         Parent root = loader.load();
         stage.setTitle("Raspored");
-        stage.setScene(new Scene(root, 1500, 800));
+        stage.setScene(new Scene(root, 1300, 800));
         stage.setResizable(false);
         stage.show();
         stage.toFront();

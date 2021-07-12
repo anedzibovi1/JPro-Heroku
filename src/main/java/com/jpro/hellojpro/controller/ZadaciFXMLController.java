@@ -116,12 +116,14 @@ public class ZadaciFXMLController implements Initializable {
     }
 
     public void dodajZadatakAction(ActionEvent actionEvent) {
-        String noviDatumString = dpDatumZ.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        LocalDate noviDatum = LocalDate.parse(noviDatumString);
-        Zadatak noviZadatak = new Zadatak(noviDatum, tfNaziv.getText(), taOpis.getText(), cbPredmet.getValue());
-        studyntDAO.dodajZadatak(noviZadatak);
-        lvZadaci.getItems().add(noviZadatak);
-        lvZadaci.refresh();
+        if(dpDatumZ.getValue() != null && !tfNaziv.getText().isEmpty() && !taOpis.getText().isEmpty()) {
+            String noviDatumString = dpDatumZ.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            LocalDate noviDatum = LocalDate.parse(noviDatumString);
+            Zadatak noviZadatak = new Zadatak(noviDatum, tfNaziv.getText(), taOpis.getText(), cbPredmet.getValue());
+            studyntDAO.dodajZadatak(noviZadatak);
+            lvZadaci.getItems().add(noviZadatak);
+            lvZadaci.refresh();
+        }
     }
 
     public void otvoriGlavnuStranicu(ActionEvent actionEvent) throws IOException {
@@ -184,14 +186,16 @@ public class ZadaciFXMLController implements Initializable {
         Zadatak zadatak = lvZadaci.getSelectionModel().getSelectedItem();
         btnObrisiUnose.setVisible(true);
 
-        Zadatak noviZadatak = new Zadatak();
-        noviZadatak.setId(zadatak.getId());
-        noviZadatak.setNaziv(tfNaziv.getText());
-        noviZadatak.setDatumZavrsetka(dpDatumZ.getValue());
-        noviZadatak.setOpis(taOpis.getText());
-        noviZadatak.setPredmet(cbPredmet.getSelectionModel().getSelectedItem());
-        studyntDAO.izmijeniZadatak(noviZadatak);
-        lvZadaci.refresh();
+        if(dpDatumZ.getValue() != null && !tfNaziv.getText().isEmpty() && !taOpis.getText().isEmpty()) {
+            Zadatak noviZadatak = new Zadatak();
+            noviZadatak.setId(zadatak.getId());
+            noviZadatak.setNaziv(tfNaziv.getText());
+            noviZadatak.setDatumZavrsetka(dpDatumZ.getValue());
+            noviZadatak.setOpis(taOpis.getText());
+            noviZadatak.setPredmet(cbPredmet.getSelectionModel().getSelectedItem());
+            studyntDAO.izmijeniZadatak(noviZadatak);
+            lvZadaci.refresh();
+        }
     }
 
     public void obrisiUnoseAction(ActionEvent actionEvent) {

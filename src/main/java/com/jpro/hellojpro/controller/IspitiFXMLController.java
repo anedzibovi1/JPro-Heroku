@@ -156,7 +156,10 @@ public class IspitiFXMLController implements Initializable {
     }
 
     public void dodajIspitAction(ActionEvent actionEvent) {
-        String noviDatumString = dpDatumO.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        String noviDatumString = "";
+        if(dpDatumO.getValue() != null)
+            noviDatumString = dpDatumO.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
         LocalDate noviDatum = LocalDate.parse(noviDatumString);
         LocalTime novoVrijemeP, novoVrijemeK;
         String satiP = sSatiP.getValue().toString();
@@ -179,11 +182,12 @@ public class IspitiFXMLController implements Initializable {
 
         novoVrijemeP = LocalTime.parse(satiP + ":" + minuteP);
         novoVrijemeK = LocalTime.parse(satiK + ":" + minuteK);
-
-        Ispit noviIspit = new Ispit(tfNaziv.getText(), noviDatum, novoVrijemeP, novoVrijemeK, cbPredmet.getValue());
-        studyntDAO.dodajIspit(noviIspit);
-        lvIspiti.getItems().add(noviIspit);
-        lvIspiti.refresh();
+        if(novoVrijemeP.isBefore(novoVrijemeK) && noviDatum != null) {
+            Ispit noviIspit = new Ispit(tfNaziv.getText(), noviDatum, novoVrijemeP, novoVrijemeK, cbPredmet.getValue());
+            studyntDAO.dodajIspit(noviIspit);
+            lvIspiti.getItems().add(noviIspit);
+            lvIspiti.refresh();
+        }
     }
 
     public void otvoriGlavnuStranicu(ActionEvent actionEvent) throws IOException {
@@ -264,16 +268,18 @@ public class IspitiFXMLController implements Initializable {
     public void izmijeniIspitAction(ActionEvent actionEvent) {
         Ispit ispit = lvIspiti.getSelectionModel().getSelectedItem();
 
-        Ispit noviIspit = new Ispit();
-        noviIspit.setId(ispit.getId());
-        noviIspit.setDatumOdrzavanja(dpDatumO.getValue());
-        noviIspit.setVrijemePocetka(LocalTime.of(sSatiP.getValue(),sMinuteP.getValue()));
-        noviIspit.setVrijemeKraja(LocalTime.of(sSatiK.getValue(),sMinuteK.getValue()));
-        noviIspit.setNaziv(tfNaziv.getText());
-        noviIspit.setPredmet(cbPredmet.getSelectionModel().getSelectedItem());
+        if(LocalTime.of(sSatiP.getValue(),sMinuteP.getValue()).isBefore(LocalTime.of(sSatiK.getValue(),sMinuteK.getValue())) && dpDatumO.getValue() != null)  {
+            Ispit noviIspit = new Ispit();
+            noviIspit.setId(ispit.getId());
+            noviIspit.setDatumOdrzavanja(dpDatumO.getValue());
+            noviIspit.setVrijemePocetka(LocalTime.of(sSatiP.getValue(),sMinuteP.getValue()));
+            noviIspit.setVrijemeKraja(LocalTime.of(sSatiK.getValue(),sMinuteK.getValue()));
+            noviIspit.setNaziv(tfNaziv.getText());
+            noviIspit.setPredmet(cbPredmet.getSelectionModel().getSelectedItem());
 
-        studyntDAO.izmijeniIspit(noviIspit);
-        lvIspiti.refresh();
+            studyntDAO.izmijeniIspit(noviIspit);
+            lvIspiti.refresh();
+        }
     }
 
     public void obrisiUnoseAction(ActionEvent actionEvent) {
