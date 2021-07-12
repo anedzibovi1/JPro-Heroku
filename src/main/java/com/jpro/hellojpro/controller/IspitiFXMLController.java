@@ -104,28 +104,10 @@ public class IspitiFXMLController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        btnGlavna.setCursor(Cursor.HAND);
-        btnZadaci.setCursor(Cursor.HAND);
-        btnIspiti.setCursor(Cursor.HAND);
-        btnKalendar.setCursor(Cursor.HAND);
-        btnPretraga.setCursor(Cursor.HAND);
-        btnRaspored.setCursor(Cursor.HAND);
-
         URL url = getClass().getResource(student.getSlika());
         Image imgStudent = new Image(String.valueOf(url), 60,60,true,true);
         ImageView viewStudent = new ImageView(imgStudent);
         btnPostavke.setGraphic(viewStudent);
-
-        spIspit.setVisible(false);
-
-        spIspit.setVisible(true);
-
-        ScaleTransition ft1 = new ScaleTransition(Duration.millis(900), spIspit);
-        ft1.setFromX(0);
-        ft1.setFromY(0);
-        ft1.setToX(1);
-        ft1.setToY(1);
-        ft1.play();
 
         cbPredmet.setItems(studyntDAO.getPredmetiStudent(student.getId()));
         cbPredmet.getSelectionModel().selectFirst();

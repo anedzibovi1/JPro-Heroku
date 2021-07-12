@@ -106,25 +106,6 @@ public class RasporedFXMLController implements Initializable {
         ImageView viewStudent = new ImageView(imgStudent);
         btnPostavke.setGraphic(viewStudent);
 
-        spCas.setVisible(false);
-        spPredmet.setVisible(false);
-
-        spCas.setVisible(true);
-        spPredmet.setVisible(true);
-        ScaleTransition ft1 = new ScaleTransition(Duration.millis(900), spCas);
-        ft1.setFromX(0);
-        ft1.setFromY(0);
-        ft1.setToX(1);
-        ft1.setToY(1);
-        ft1.play();
-
-        ScaleTransition ft2 = new ScaleTransition(Duration.millis(900), spPredmet);
-        ft2.setFromX(0);
-        ft2.setFromY(0);
-        ft2.setToX(1);
-        ft2.setToY(1);
-        ft2.play();
-
         cbPredmet.setItems(studyntDAO.getPredmetiStudent(student.getId()));
         cbPredmet.getSelectionModel().selectFirst();
 

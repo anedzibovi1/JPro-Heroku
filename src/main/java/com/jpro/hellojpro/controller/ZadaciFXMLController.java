@@ -80,16 +80,6 @@ public class ZadaciFXMLController implements Initializable {
         ImageView viewStudent = new ImageView(imgStudent);
         btnPostavke.setGraphic(viewStudent);
 
-        spZadatak.setVisible(false);
-        spZadatak.setVisible(true);
-
-        ScaleTransition ft1 = new ScaleTransition(Duration.millis(900), spZadatak);
-        ft1.setFromX(0);
-        ft1.setFromY(0);
-        ft1.setToX(1);
-        ft1.setToY(1);
-        ft1.play();
-
         cbPredmet.setItems(studyntDAO.getPredmetiStudent(student.getId()));
         cbPredmet.getSelectionModel().selectFirst();
         lvZadaci.setItems(studyntDAO.getZadaciStudent(student.getId()));

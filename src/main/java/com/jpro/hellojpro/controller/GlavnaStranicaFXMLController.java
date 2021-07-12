@@ -104,13 +104,6 @@ public class GlavnaStranicaFXMLController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        btnGlavna.setCursor(Cursor.HAND);
-        btnZadaci.setCursor(Cursor.HAND);
-        btnIspiti.setCursor(Cursor.HAND);
-        btnKalendar.setCursor(Cursor.HAND);
-        btnPretraga.setCursor(Cursor.HAND);
-        btnRaspored.setCursor(Cursor.HAND);
-
         URL url = getClass().getResource(student.getSlika());
         Image imgStudent = new Image(String.valueOf(url), 60,60,true,true);
         ImageView viewStudent = new ImageView(imgStudent);
@@ -151,40 +144,6 @@ public class GlavnaStranicaFXMLController implements Initializable {
 
         if(lvCasovi.getItems().size() == 0) tNemaCasova.setVisible(true);
         if(lvIspiti1.getItems().size() == 0) tNemaIspita.setVisible(true);
-
-
-        tZadaci.setVisible(true);
-        tCasovi.setVisible(true);
-        tIspiti1.setVisible(true);
-        tIspiti2.setVisible(true);
-
-        ScaleTransition ft1 = new ScaleTransition(Duration.millis(950), tZadaci);
-        ft1.setFromX(0.5);
-        ft1.setFromY(0.5);
-        ft1.setToX(2);
-        ft1.setToY(2);
-        ft1.play();
-
-        ScaleTransition ft2 = new ScaleTransition(Duration.millis(950), tCasovi);
-        ft2.setFromX(0.1);
-        ft2.setFromY(0.1);
-        ft2.setToX(2);
-        ft2.setToY(2);
-        ft2.play();
-
-        ScaleTransition ft3 = new ScaleTransition(Duration.millis(950), tIspiti1);
-        ft3.setFromX(0.1);
-        ft3.setFromY(0.1);
-        ft3.setToX(2);
-        ft3.setToY(2);
-        ft3.play();
-
-        ScaleTransition ft4 = new ScaleTransition(Duration.millis(950), tIspiti2);
-        ft4.setFromX(0.5);
-        ft4.setFromY(0.5);
-        ft4.setToX(2);
-        ft4.setToY(2);
-        ft4.play();
 
     }
 
